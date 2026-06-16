@@ -1,0 +1,50 @@
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% bootstrap_css %}
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">{% translate "Task manager" %}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">{% translate "Users" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">{% translate "Sign in" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">{% translate "Registration" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 70px;">
+        <div class="bg-light p-5 rounded">
+            <h1>{% translate "Welcome!" %}</h1>
+            <p class="lead">{% translate "This is a study project" %}</p>
+            <a class="btn btn-lg btn-primary" href="#" role="button">{% translate "Something usefull" %}</a>
+        </div>
+    </main>
+
+</body>
+
+</html>
