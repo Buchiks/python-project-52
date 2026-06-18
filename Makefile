@@ -22,4 +22,7 @@ apply migrations:
 compilemessages:
 	uv run task_manager/manage.py compilemessages
 
+messages:
+	uv run task_manager/manage.py  makemessages -l ru
+
 	
