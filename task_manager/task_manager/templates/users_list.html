@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <h1>{% translate "Users" %}</h1>
+        <table class="table table-bordered" data-test="urls">
+            <thead>
+                <tr>
+                    <th class="col-1 fw-semibold">ID</th>
+                    <th class="col-3 fw-semibold">{% translate "Nickname" %}</th>
+                    <th class="col-3 fw-semibold">{% translate "Full name" %}</th>
+                    <th class="col-3 fw-semibold">{% translate "Creation date" %}</th>
+                    <th class="col-2 fw-semibold"></th>
+                </tr>
+            </thead>
+            {% if users %}
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td class="col-1">{{ user.id }}</td>
+                    <td class="col-3">{{ user.nickname }}</td>
+                    <td class="col-3">{{ user.name }} {{ user.surname }}</td>
+                    <td class="col-3">{{ user.created_at }}</td>
+                    <td class="col-2"><a href="#">{% translate "update" %}</a>
+                        <a href="#">{% translate "delete" %}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endif %}
+        </table>
+    </div>
+</main>
+{% endblock %}
