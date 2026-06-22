@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 11:15+0000\n"
+"POT-Creation-Date: 2026-06-22 11:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "Surname"
 msgstr "Фамилия"
 
 #: task_manager/task_manager/forms.py:14 task_manager/task_manager/forms.py:27
-#: task_manager/task_manager/templates/users_list.html:25
+#: task_manager/task_manager/templates/users_list.html:23
 msgid "Nickname"
 msgstr "Имя пользователя"
 
@@ -38,7 +38,7 @@ msgid "Task manager"
 msgstr "Менеджер Задач"
 
 #: task_manager/task_manager/templates/base.html:28
-#: task_manager/task_manager/templates/users_list.html:20
+#: task_manager/task_manager/templates/users_list.html:18
 msgid "Users"
 msgstr "Пользователи"
 
@@ -68,22 +68,26 @@ msgid "Something usefull"
 msgstr "Что-то полезное"
 
 #: task_manager/task_manager/templates/update_user.html:5
-#: task_manager/task_manager/templates/users_list.html:39
+#: task_manager/task_manager/templates/users_list.html:37
 msgid "Update"
 msgstr "Изменить"
 
-#: task_manager/task_manager/templates/users_list.html:26
+#: task_manager/task_manager/templates/users_list.html:24
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/task_manager/templates/users_list.html:27
+#: task_manager/task_manager/templates/users_list.html:25
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: task_manager/task_manager/templates/users_list.html:40
+#: task_manager/task_manager/templates/users_list.html:41
 msgid "Delete"
 msgstr "Удалить"
 
 #: task_manager/task_manager/views.py:53
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
+
+#: task_manager/task_manager/views.py:65
+msgid "User successfully deleted"
+msgstr "Пользователь успешно удален"

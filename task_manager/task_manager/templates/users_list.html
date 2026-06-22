@@ -35,7 +35,12 @@
                     <td class="col-3">{{ user.name }} {{ user.surname }}</td>
                     <td class="col-3">{{ user.created_at }}</td>
                     <td class="col-2"><a href="{% url 'user_update' pk=user.id %}">{% translate "Update" %}</a>
-                        <a href="#">{% translate "Delete" %}</a>
+                        <div>
+                            <form action="{% url 'user_delete' pk=user.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-link" value="{% translate 'Delete' %}">
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 {% endfor %}

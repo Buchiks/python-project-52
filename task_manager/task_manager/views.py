@@ -54,3 +54,13 @@ class UserUpdateView(View):
             return redirect("users")
         
         return render(request, "update_user.html", {"form" :form, "user_id": user_id})
+
+class UserDeleteView(View):
+
+    def post(self, request, *args, **kwargs):
+        user_id = kwargs.get("pk")
+        user = Users.objects.get(pk=user_id)
+        if user:
+            user.delete()
+            messages.add_message(request, messages.SUCCESS, _("User successfully deleted"))
+            return redirect("users")
