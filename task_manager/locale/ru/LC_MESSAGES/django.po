@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 16:59+0000\n"
+"POT-Creation-Date: 2026-06-22 17:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,6 +51,14 @@ msgstr "Вход"
 #: task_manager/task_manager/templates/create_user.html:9
 msgid "Registration"
 msgstr "Регистрация"
+
+#: task_manager/task_manager/templates/base.html:39
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: task_manager/task_manager/templates/base.html:43
+msgid "Logout"
+msgstr "Выход"
 
 #: task_manager/task_manager/templates/create_user.html:17
 msgid "Registrate"

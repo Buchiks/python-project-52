@@ -34,6 +34,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'user_create' %}">{% translate "Registration" %}</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        {% translate "Are you sure?" as confirmation %}
+                        <form action="{% url 'user_logout' %}" method="post"
+                            onsubmit="return confirm('{{ confirmation }}')">
+                            {% csrf_token %}
+                            <input type="submit" class="nav-link active" value="{% translate 'Logout' %}">
+                        </form>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

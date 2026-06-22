@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib import messages
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
@@ -83,4 +83,8 @@ class UserLoginView(View):
             return redirect("index")
         
         return render(request, "login.html", {"form": form})
-        
+
+class UserLogoutView(View):
+    def post(self, request, *args, **kwargs):
+        logout(request)
+        return redirect("index")
