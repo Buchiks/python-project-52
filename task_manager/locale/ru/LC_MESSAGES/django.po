@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 17:48+0000\n"
+"POT-Creation-Date: 2026-06-22 17:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,6 +112,10 @@ msgstr "Пользователь успешно удален"
 #: task_manager/task_manager/views.py:82
 msgid "You signed in"
 msgstr "Вы залогинены"
+
+#: task_manager/task_manager/views.py:90
+msgid "You signed out"
+msgstr "Вы разлогинены"
 
 #~ msgid "Password"
 #~ msgstr "Пароль"

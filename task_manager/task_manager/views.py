@@ -87,4 +87,5 @@ class UserLoginView(View):
 class UserLogoutView(View):
     def post(self, request, *args, **kwargs):
         logout(request)
+        messages.add_message(request, messages.SUCCESS, _("You signed out"))
         return redirect("index")
