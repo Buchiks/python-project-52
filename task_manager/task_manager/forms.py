@@ -14,6 +14,10 @@ class UserForm(UserCreationForm):
             "last_name": _("Surname"),
             "username": _("Nickname")
             }
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].help_text = _("Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/_")
 
 class UserUpdateForm(UserChangeForm):
     password = None

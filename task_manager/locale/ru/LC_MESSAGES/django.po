@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 18:41+0000\n"
+"POT-Creation-Date: 2026-06-22 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,18 +20,24 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/task_manager/forms.py:13 task_manager/task_manager/forms.py:25
+#: task_manager/task_manager/forms.py:13 task_manager/task_manager/forms.py:29
 msgid "Name"
 msgstr "Имя"
 
-#: task_manager/task_manager/forms.py:14 task_manager/task_manager/forms.py:26
+#: task_manager/task_manager/forms.py:14 task_manager/task_manager/forms.py:30
 msgid "Surname"
 msgstr "Фамилия"
 
-#: task_manager/task_manager/forms.py:15 task_manager/task_manager/forms.py:27
+#: task_manager/task_manager/forms.py:15 task_manager/task_manager/forms.py:31
 #: task_manager/task_manager/templates/users_list.html:23
 msgid "Nickname"
 msgstr "Имя пользователя"
+
+#: task_manager/task_manager/forms.py:20
+msgid ""
+"Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/"
+"_"
+msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_"
 
 #: task_manager/task_manager/templates/base.html:19
 msgid "Task manager"
@@ -102,7 +108,7 @@ msgstr "Дата создания"
 msgid "Delete"
 msgstr "Удалить"
 
-#: task_manager/task_manager/utils.py:16
+#: task_manager/task_manager/utils.py:15
 msgid "You don't have permission"
 msgstr "У вас нет прав для изменения"
 
