@@ -15,7 +15,7 @@
             {% bootstrap_form form %}
         </table>
         {% translate 'Registrate' as default_button %}
-        <input type="submit" value="{{ button | default:default_button }}">
+        <input type="submit" class="btn btn-primary" value="{{ button | default:default_button }}">
     </form>
 </main>
 {% endblock %}
