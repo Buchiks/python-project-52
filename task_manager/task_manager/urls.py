@@ -25,4 +25,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name="index"),
     path("users/", views.UsersIndexView.as_view(), name="users"),
     path("users/create/", views.UserCreateView.as_view(), name="user_create"),
+    path("users/<int:pk>/update/", views.UserUpdateView.as_view(), name="user_update"),
+    #path("users/<int:pk>/delete/")
 ]

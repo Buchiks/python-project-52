@@ -6,6 +6,13 @@
 {% block title %}Index{% endblock %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissable fade show" role="alert">
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
 <main class="container">
     <div class="bg-light p-5 rounded">
         <h1>{% translate "Users" %}</h1>
@@ -27,8 +34,8 @@
                     <td class="col-3">{{ user.nickname }}</td>
                     <td class="col-3">{{ user.name }} {{ user.surname }}</td>
                     <td class="col-3">{{ user.created_at }}</td>
-                    <td class="col-2"><a href="#">{% translate "update" %}</a>
-                        <a href="#">{% translate "delete" %}</a>
+                    <td class="col-2"><a href="{% url 'user_update' pk=user.id %}">{% translate "Update" %}</a>
+                        <a href="#">{% translate "Delete" %}</a>
                     </td>
                 </tr>
                 {% endfor %}

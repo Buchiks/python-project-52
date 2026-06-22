@@ -1,0 +1,6 @@
+{% load i18n %}
+
+
+{% url 'user_update' pk=user_id as action_url %}
+{% translate 'Update' as button %}
+{% include "create_user.html" with form_action=action_url input_value=button %}

@@ -7,12 +7,14 @@
 {% block content %}
 <main class="form-signin px-5">
     <h1>{% translate "Registration" %}</h1>
-    <form action="{% url 'user_create' %}" method="post">
+    {% url 'user_create' as default_url %}
+    <form action="{{ action_url|default:default_url }}" method="post">
         {% csrf_token %}
         <table border="1">
             {{ form }}
         </table>
-        <input type="submit" value="{% translate 'Registrate' %}">
+        {% translate 'Registrate' as default_button %}
+        <input type="submit" value="{{ button|default:default_button }}">
     </form>
 </main>
 {% endblock %}

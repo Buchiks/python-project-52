@@ -1,11 +1,14 @@
 from django.shortcuts import redirect, render
 from django.views import View
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 from .forms import UserForm
 from .models import Users
 
 
 class IndexView(View):
+
     def get(self, request, *args, **kwargs):
         return render(request, "index.html")
 
@@ -32,3 +35,22 @@ class UserCreateView(View):
         if form.is_valid():
             form.save()
             return redirect("users")
+
+class UserUpdateView(View):
+    
+    def get(self, request, *args, **kwargs):
+        user_id = kwargs.get("pk")
+        user = Users.objects.get(pk=user_id)
+        form = UserForm(instance=user)
+        return render(request, "update_user.html", {"form" :form, "user_id": user_id})
+
+    def post(self, request, *args, **kwargs):
+        user_id = kwargs.get("pk")
+        user = Users.objects.get(pk=user_id)
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, _("User successfully updated"))
+            return redirect("users")
+        
+        return render(request, "update_user.html", {"form" :form, "user_id": user_id})
