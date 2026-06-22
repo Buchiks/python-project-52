@@ -36,7 +36,9 @@
                     <td class="col-3">{{ user.date_joined }}</td>
                     <td class="col-2"><a href="{% url 'user_update' pk=user.id %}">{% translate "Update" %}</a>
                         <div>
-                            <form action="{% url 'user_delete' pk=user.id %}" method="post">
+                            {% translate "Are you sure?" as confirmation %}
+                            <form action="{% url 'user_delete' pk=user.id %}" method="post"
+                                onsubmit="return confirm('{{ confirmation }}')">
                                 {% csrf_token %}
                                 <input type="submit" class="btn btn-link" value="{% translate 'Delete' %}">
                             </form>

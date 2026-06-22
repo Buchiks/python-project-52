@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 17:51+0000\n"
+"POT-Creation-Date: 2026-06-22 18:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,7 @@ msgid "Registration"
 msgstr "Регистрация"
 
 #: task_manager/task_manager/templates/base.html:39
+#: task_manager/task_manager/templates/users_list.html:39
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
@@ -97,23 +98,27 @@ msgstr "Полное имя"
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: task_manager/task_manager/templates/users_list.html:41
+#: task_manager/task_manager/templates/users_list.html:43
 msgid "Delete"
 msgstr "Удалить"
 
-#: task_manager/task_manager/views.py:57
+#: task_manager/task_manager/utils.py:16
+msgid "You don't have permission"
+msgstr "У вас нет прав для изменения"
+
+#: task_manager/task_manager/views.py:59
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: task_manager/task_manager/views.py:69
+#: task_manager/task_manager/views.py:71
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: task_manager/task_manager/views.py:82
+#: task_manager/task_manager/views.py:85
 msgid "You signed in"
 msgstr "Вы залогинены"
 
-#: task_manager/task_manager/views.py:90
+#: task_manager/task_manager/views.py:94
 msgid "You signed out"
 msgstr "Вы разлогинены"
 

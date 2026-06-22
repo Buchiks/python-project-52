@@ -2,11 +2,13 @@ from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib import messages
 from django.contrib.auth import login, logout
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
 from .forms import UserForm, UserUpdateForm
 from .models import Users
+from .utils import OwnerTestMixin
 
 
 class IndexView(View):
@@ -40,8 +42,8 @@ class UserCreateView(View):
         
         return render(request, "create_user.html", {"form": form})
 
-class UserUpdateView(View):
-    
+class UserUpdateView(OwnerTestMixin, View):
+
     def get(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
         user = Users.objects.get(pk=user_id)
@@ -59,8 +61,8 @@ class UserUpdateView(View):
         
         return render(request, "update_user.html", {"form" :form, "user_id": user_id})
 
-class UserDeleteView(View):
-
+class UserDeleteView(OwnerTestMixin, View):
+    
     def post(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
         user = Users.objects.get(pk=user_id)
@@ -70,6 +72,7 @@ class UserDeleteView(View):
             return redirect("users")
         
 class UserLoginView(View):
+
     def get(self, request, *args, **kwargs):
         form = AuthenticationForm()
         return render(request, "login.html", {"form": form})
@@ -85,6 +88,7 @@ class UserLoginView(View):
         return render(request, "login.html", {"form": form})
 
 class UserLogoutView(View):
+
     def post(self, request, *args, **kwargs):
         logout(request)
         messages.add_message(request, messages.SUCCESS, _("You signed out"))
