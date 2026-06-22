@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib import messages
+from django.contrib.auth import login
+from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
 from .forms import UserForm, UserUpdateForm
@@ -66,3 +68,19 @@ class UserDeleteView(View):
             user.delete()
             messages.add_message(request, messages.SUCCESS, _("User successfully deleted"))
             return redirect("users")
+        
+class UserLoginView(View):
+    def get(self, request, *args, **kwargs):
+        form = AuthenticationForm()
+        return render(request, "login.html", {"form": form})
+    
+    def post(self, request, *args, **kwargs):
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            messages.add_message(request, messages.SUCCESS, _("You signed in"))
+            return redirect("index")
+        
+        return render(request, "login.html", {"form": form})
+        

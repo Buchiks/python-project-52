@@ -6,6 +6,13 @@
 {% block title %}Index{% endblock %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissable fade show" role="alert">
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
 <main class="container">
     <div class="bg-light p-5 rounded">
         <h1>{% translate "Welcome!" %}</h1>

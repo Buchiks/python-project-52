@@ -26,4 +26,4 @@ class UserUpdateForm(UserChangeForm):
             "last_name": _("Surname"),
             "username": _("Nickname")
             }
-
+        
