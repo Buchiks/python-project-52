@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 14:55+0000\n"
+"POT-Creation-Date: 2026-06-22 15:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,26 +20,18 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/task_manager/forms.py:13 task_manager/task_manager/forms.py:21
+#: task_manager/task_manager/forms.py:13 task_manager/task_manager/forms.py:26
 msgid "Name"
 msgstr "Имя"
 
-#: task_manager/task_manager/forms.py:14 task_manager/task_manager/forms.py:25
+#: task_manager/task_manager/forms.py:14 task_manager/task_manager/forms.py:27
 msgid "Surname"
 msgstr "Фамилия"
 
-#: task_manager/task_manager/forms.py:15 task_manager/task_manager/forms.py:29
+#: task_manager/task_manager/forms.py:15 task_manager/task_manager/forms.py:28
 #: task_manager/task_manager/templates/users_list.html:23
 msgid "Nickname"
 msgstr "Имя пользователя"
-
-#: task_manager/task_manager/forms.py:33
-msgid "Password"
-msgstr "Пароль"
-
-#: task_manager/task_manager/forms.py:37
-msgid "Confirm password"
-msgstr "Подтверждение пароля"
 
 #: task_manager/task_manager/templates/base.html:19
 msgid "Task manager"
@@ -59,7 +51,7 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/task_manager/templates/create_user.html:16
+#: task_manager/task_manager/templates/create_user.html:17
 msgid "Registrate"
 msgstr "Зарегистрировать"
 
@@ -74,6 +66,10 @@ msgstr "Это учебный проект"
 #: task_manager/task_manager/templates/index.html:13
 msgid "Something usefull"
 msgstr "Что-то полезное"
+
+#: task_manager/task_manager/templates/update_user.html:3
+msgid "Updation"
+msgstr "Обновление"
 
 #: task_manager/task_manager/templates/update_user.html:5
 #: task_manager/task_manager/templates/users_list.html:37
@@ -99,3 +95,9 @@ msgstr "Пользователь успешно изменен"
 #: task_manager/task_manager/views.py:65
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
+
+#~ msgid "Password"
+#~ msgstr "Пароль"
+
+#~ msgid "Confirm password"
+#~ msgstr "Подтверждение пароля"

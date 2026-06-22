@@ -3,7 +3,7 @@ from django.views import View
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 
-from .forms import UserForm
+from .forms import UserForm, UserUpdateForm
 from .models import Users
 
 
@@ -41,13 +41,13 @@ class UserUpdateView(View):
     def get(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
         user = Users.objects.get(pk=user_id)
-        form = UserForm(instance=user)
+        form = UserUpdateForm(instance=user)
         return render(request, "update_user.html", {"form" :form, "user_id": user_id})
 
     def post(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
         user = Users.objects.get(pk=user_id)
-        form = UserForm(request.POST, instance=user)
+        form = UserUpdateForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, _("User successfully updated"))
