@@ -7,22 +7,22 @@ from .models import Users
 class UserForm(forms.ModelForm):
     class Meta:
         model = Users
-        fields = ["name", "surname", "nickname"]
+        fields = ["first_name", "last_name", "username"]
         labels = {
-            "name": _("Name"),
-            "surname": _("Surname"),
-            "nickname": _("Nickname")
+            "first_name": _("Name"),
+            "last_name": _("Surname"),
+            "username": _("Nickname")
             }
         widgets = {
-            "name": forms.TextInput(attrs={
+            "first_name": forms.TextInput(attrs={
                 "class": "form-control  my-3",
                 "placeholder": _("Name"),
             }),
-            "surname": forms.TextInput(attrs={
+            "last_name": forms.TextInput(attrs={
                 "class": "form-control  my-3",
                 "placeholder": _("Surname"),
             }),
-            "nickname": forms.TextInput(attrs={
+            "username": forms.TextInput(attrs={
                 "class": "form-control my-3",
                 "placeholder": _("Nickname"),
             }),

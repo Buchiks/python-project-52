@@ -31,9 +31,9 @@
                 {% for user in users %}
                 <tr>
                     <td class="col-1">{{ user.id }}</td>
-                    <td class="col-3">{{ user.nickname }}</td>
-                    <td class="col-3">{{ user.name }} {{ user.surname }}</td>
-                    <td class="col-3">{{ user.created_at }}</td>
+                    <td class="col-3">{{ user.username }}</td>
+                    <td class="col-3">{{ user.first_name }} {{ user.surname }}</td>
+                    <td class="col-3">{{ user.date_joined }}</td>
                     <td class="col-2"><a href="{% url 'user_update' pk=user.id %}">{% translate "Update" %}</a>
                         <div>
                             <form action="{% url 'user_delete' pk=user.id %}" method="post">
