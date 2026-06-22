@@ -35,6 +35,8 @@ class UserCreateView(View):
         if form.is_valid():
             form.save()
             return redirect("users")
+        
+        return render(request, "create_user.html", {"form": form})
 
 class UserUpdateView(View):
     
