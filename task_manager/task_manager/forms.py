@@ -17,7 +17,6 @@ class UserForm(UserCreationForm):
 
 class UserUpdateForm(UserChangeForm):
     password = None
-    password
 
     class Meta:
         model = Users
@@ -27,3 +26,4 @@ class UserUpdateForm(UserChangeForm):
             "last_name": _("Surname"),
             "username": _("Nickname")
             }
+
