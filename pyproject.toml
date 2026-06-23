@@ -14,5 +14,20 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "pytest>=9.1.1",
+    "pytest-django>=4.12.0",
+    "pytest-testcontainers-django>=0.2.4",
+    "pytest-xdist>=3.8.0",
     "ruff>=0.15.17",
 ]
+
+[tool.pytest-testcontainers-django]
+postgres_image = "postgres:16-alpine"
+postgres_user = "test_user"
+postgres_password = "test_password"
+postgres_database = "test_db"
+db_host_env_name = "DJANGO_DB_HOST"
+db_port_env_name = "DJANGO_DB_PORT"
+db_name_env_name = "DJANGO_DB_NAME"
+db_user_env_name = "DJANGO_DB_USER"
+db_password_env_name = "DJANGO_DB_PASSWORD"

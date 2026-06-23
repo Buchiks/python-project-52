@@ -25,4 +25,7 @@ compilemessages:
 messages:
 	uv run task_manager/manage.py  makemessages -l ru
 
+test:
+	uv run pytest task_manager/
+
 	

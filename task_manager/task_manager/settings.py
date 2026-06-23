@@ -77,13 +77,26 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 import dj_database_url
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+if os.environ.get('DJANGO_DB_HOST'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DJANGO_DB_NAME', 'test_db'),
+            'USER': os.environ.get('DJANGO_DB_USER', 'postgres'),
+            'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', 'postgres'),
+            'HOST': os.environ.get('DJANGO_DB_HOST'),
+            'PORT': os.environ.get('DJANGO_DB_PORT', '5432'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
 
 
 # Password validation
