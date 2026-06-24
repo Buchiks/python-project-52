@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_bootstrap5',
-    'task_manager'
+    'task_manager',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -158,4 +159,4 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-AUTH_USER_MODEL = 'task_manager.Users'
+AUTH_USER_MODEL = 'users.Users'

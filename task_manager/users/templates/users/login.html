@@ -1,0 +1,6 @@
+{% load i18n %}
+
+{% translate "Login" as header %}
+{% url 'users:user_login' as action_url %}
+{% translate 'Sign in' as button %}
+{% include "users/create_user.html" with form_action=action_url input_value=button %}

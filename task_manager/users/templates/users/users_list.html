@@ -32,12 +32,12 @@
                 <tr>
                     <td class="col-1">{{ user.id }}</td>
                     <td class="col-3">{{ user.username }}</td>
-                    <td class="col-3">{{ user.first_name }} {{ user.surname }}</td>
+                    <td class="col-3">{{ user.first_name }} {{ user.last_name }}</td>
                     <td class="col-3">{{ user.date_joined }}</td>
-                    <td class="col-2"><a href="{% url 'user_update' pk=user.id %}">{% translate "Update" %}</a>
+                    <td class="col-2"><a href="{% url 'users:user_update' pk=user.id %}">{% translate "Update" %}</a>
                         <div>
                             {% translate "Are you sure?" as confirmation %}
-                            <form action="{% url 'user_delete' pk=user.id %}" method="post"
+                            <form action="{% url 'users:user_delete' pk=user.id %}" method="post"
                                 onsubmit="return confirm('{{ confirmation }}')">
                                 {% csrf_token %}
                                 <input type="submit" class="btn btn-link" value="{% translate 'Delete' %}">

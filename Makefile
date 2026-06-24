@@ -14,10 +14,10 @@ collectstatic:
 	uv run task_manager/manage.py collectstatic
 
 migrate app:
-	uv run task_manager/manage.py makemigrations task_manager
+	uv run task_manager/manage.py makemigrations
 
 apply migrations:
-	uv run task_manager/manage.py migrate task_manager
+	uv run task_manager/manage.py migrate 
 
 compilemessages:
 	uv run task_manager/manage.py compilemessages

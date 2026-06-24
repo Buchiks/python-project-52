@@ -13,4 +13,4 @@ class OwnerTestMixin(UserPassesTestMixin):
     
     def handle_no_permission(self):
         messages.add_message(self.request, messages.WARNING, _("You don't have permission"))
-        return redirect('users')
+        return redirect('users:index')
