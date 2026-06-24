@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 19:53+0000\n"
+"POT-Creation-Date: 2026-06-24 21:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,56 +20,38 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/task_manager/forms.py:13 task_manager/task_manager/forms.py:29
-msgid "Name"
-msgstr "Имя"
-
-#: task_manager/task_manager/forms.py:14 task_manager/task_manager/forms.py:30
-msgid "Surname"
-msgstr "Фамилия"
-
-#: task_manager/task_manager/forms.py:15 task_manager/task_manager/forms.py:31
-#: task_manager/task_manager/templates/users_list.html:23
-msgid "Nickname"
-msgstr "Имя пользователя"
-
-#: task_manager/task_manager/forms.py:20
-msgid ""
-"Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/"
-"_"
-msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_"
-
-#: task_manager/task_manager/templates/base.html:19
-msgid "Task manager"
-msgstr "Менеджер Задач"
-
-#: task_manager/task_manager/templates/base.html:28
-#: task_manager/task_manager/templates/users_list.html:18
+#: task_manager/statuses/tests/templates/statuses_list.html:18
+#: task_manager/templates/base.html:28
+#: task_manager/users/templates/users/users_list.html:18
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/task_manager/templates/base.html:32
-#: task_manager/task_manager/templates/login.html:3
-msgid "Login"
-msgstr "Вход"
+#: task_manager/statuses/tests/templates/statuses_list.html:23
+#: task_manager/users/forms.py:13 task_manager/users/forms.py:29
+msgid "Name"
+msgstr "Имя"
 
-#: task_manager/task_manager/templates/base.html:35
-#: task_manager/task_manager/templates/create_user.html:9
-msgid "Registration"
-msgstr "Регистрация"
+#: task_manager/statuses/tests/templates/statuses_list.html:24
+#: task_manager/users/templates/users/users_list.html:25
+msgid "Creation date"
+msgstr "Дата создания"
 
-#: task_manager/task_manager/templates/base.html:39
-#: task_manager/task_manager/templates/users_list.html:39
+#: task_manager/statuses/tests/templates/statuses_list.html:35
+#: task_manager/users/templates/users/update_user.html:5
+#: task_manager/users/templates/users/users_list.html:37
+msgid "Update"
+msgstr "Изменить"
+
+#: task_manager/statuses/tests/templates/statuses_list.html:37
+#: task_manager/templates/base.html:46
+#: task_manager/users/templates/users/users_list.html:39
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: task_manager/task_manager/templates/base.html:43
-msgid "Logout"
-msgstr "Выход"
-
-#: task_manager/task_manager/templates/create_user.html:17
-msgid "Registrate"
-msgstr "Зарегистрировать"
+#: task_manager/statuses/tests/templates/statuses_list.html:41
+#: task_manager/users/templates/users/users_list.html:43
+msgid "Delete"
+msgstr "Удалить"
 
 #: task_manager/task_manager/templates/index.html:18
 msgid "Welcome!"
@@ -83,48 +65,78 @@ msgstr "Это учебный проект"
 msgid "Something usefull"
 msgstr "Что-то полезное"
 
-#: task_manager/task_manager/templates/login.html:5
+#: task_manager/templates/base.html:19
+msgid "Task manager"
+msgstr "Менеджер Задач"
+
+#: task_manager/templates/base.html:33
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/base.html:37
+#: task_manager/users/templates/users/login.html:3
+msgid "Login"
+msgstr "Вход"
+
+#: task_manager/templates/base.html:41
+#: task_manager/users/templates/users/create_user.html:9
+msgid "Registration"
+msgstr "Регистрация"
+
+#: task_manager/templates/base.html:50
+msgid "Logout"
+msgstr "Выход"
+
+#: task_manager/users/forms.py:14 task_manager/users/forms.py:30
+msgid "Surname"
+msgstr "Фамилия"
+
+#: task_manager/users/forms.py:15 task_manager/users/forms.py:31
+#: task_manager/users/templates/users/users_list.html:23
+msgid "Nickname"
+msgstr "Имя пользователя"
+
+#: task_manager/users/forms.py:20
+msgid ""
+"Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/"
+"_"
+msgstr ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_"
+
+#: task_manager/users/templates/users/create_user.html:17
+msgid "Registrate"
+msgstr "Зарегистрировать"
+
+#: task_manager/users/templates/users/login.html:5
 msgid "Sign in"
 msgstr "Войти"
 
-#: task_manager/task_manager/templates/update_user.html:3
+#: task_manager/users/templates/users/update_user.html:3
 msgid "Updation"
 msgstr "Обновление"
 
-#: task_manager/task_manager/templates/update_user.html:5
-#: task_manager/task_manager/templates/users_list.html:37
-msgid "Update"
-msgstr "Изменить"
-
-#: task_manager/task_manager/templates/users_list.html:24
+#: task_manager/users/templates/users/users_list.html:24
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/task_manager/templates/users_list.html:25
-msgid "Creation date"
-msgstr "Дата создания"
-
-#: task_manager/task_manager/templates/users_list.html:43
-msgid "Delete"
-msgstr "Удалить"
-
-#: task_manager/task_manager/utils.py:15
+#: task_manager/users/utils.py:15
 msgid "You don't have permission"
 msgstr "У вас нет прав для изменения"
 
-#: task_manager/task_manager/views.py:59
+#: task_manager/users/views.py:52
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: task_manager/task_manager/views.py:71
+#: task_manager/users/views.py:64
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: task_manager/task_manager/views.py:85
+#: task_manager/users/views.py:78
 msgid "You signed in"
 msgstr "Вы залогинены"
 
-#: task_manager/task_manager/views.py:94
+#: task_manager/users/views.py:87
 msgid "You signed out"
 msgstr "Вы разлогинены"
 
