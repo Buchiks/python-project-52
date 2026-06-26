@@ -3,7 +3,7 @@
 {% load i18n %}
 
 
-{% block title %}Status creation{% endblock %}
+{% block title %}{{ title | default:'Status creation' }}{% endblock %}
 {% block content %}
 <main class="form-signin px-5">
     {% translate 'Create status' as default_header %}

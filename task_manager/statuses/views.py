@@ -24,3 +24,22 @@ class StatusesCreateView(LoginRequiredMixin, View):
             return redirect("statuses:list")
         
         return render(request, "status_create.html", {"form": form})
+
+class StatusesUpdateView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        status_id = kwargs.get("pk")
+        status = Status.objects.get(pk=status_id)
+        form = StatusForm(instance=status)
+        return render(request, "status_update.html", {"form" :form, "status_id": status_id})
+
+    def post(self, request, *args, **kwargs):
+        status_id = kwargs.get("pk")
+        status = Status.objects.get(pk=status_id)
+        form = StatusForm(request.POST, instance=status)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, _("Status successfully updated"))
+            return redirect("statuses:list")
+        
+        return render(request, "status_update.html", {"form" :form, "status_id": status_id})

@@ -1,0 +1,7 @@
+{% load i18n %}
+
+
+{% translate "Updation" as header %}
+{% url 'statuses:update' pk=status_id as action_url %}
+{% translate 'Update' as button %}
+{% include "status_create.html" with form_action=action_url input_value=button title='Status Updation' %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-25 13:43+0000\n"
+"POT-Creation-Date: 2026-06-26 10:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,18 @@ msgstr "Создать статус"
 msgid "Create"
 msgstr "Создать"
 
+#: task_manager/statuses/templates/status_update.html:4
+#: task_manager/users/templates/users/update_user.html:3
+msgid "Updation"
+msgstr "Обновление"
+
+#: task_manager/statuses/templates/status_update.html:6
+#: task_manager/statuses/templates/statuses_list.html:37
+#: task_manager/users/templates/users/update_user.html:5
+#: task_manager/users/templates/users/users_list.html:37
+msgid "Update"
+msgstr "Изменить"
+
 #: task_manager/statuses/templates/statuses_list.html:18
 #: task_manager/templates/base.html:33
 msgid "Statuses"
@@ -48,6 +60,10 @@ msgstr "Статусы"
 #: task_manager/users/templates/users/users_list.html:25
 msgid "Creation date"
 msgstr "Дата создания"
+
+#: task_manager/statuses/views.py:42
+msgid "Status successfully updated"
+msgstr "Статус успешно изменен"
 
 #: task_manager/task_manager/templates/index.html:18
 msgid "Welcome!"
@@ -113,15 +129,6 @@ msgstr "Зарегистрировать"
 #: task_manager/users/templates/users/login.html:5
 msgid "Sign in"
 msgstr "Войти"
-
-#: task_manager/users/templates/users/update_user.html:3
-msgid "Updation"
-msgstr "Обновление"
-
-#: task_manager/users/templates/users/update_user.html:5
-#: task_manager/users/templates/users/users_list.html:37
-msgid "Update"
-msgstr "Изменить"
 
 #: task_manager/users/templates/users/users_list.html:24
 msgid "Full name"
