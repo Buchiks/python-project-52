@@ -18,6 +18,8 @@ jobs:
           pip install uv
           make install
       - name: Run migrations
+        env:
+          DJANGO_DB_HOST: localhost
         run: |
           make migrate
           make apply migrations
