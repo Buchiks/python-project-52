@@ -7,6 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+          DJANGO_DB_HOST: localhost
+          DJANGO_DB_PORT: 5432
+          DJANGO_DB_NAME: test_db
+          DJANGO_DB_USER: test_user
+          DJANGO_DB_PASSWORD: test_password
     services:
       postgres:
         image: postgres:16-alpine
@@ -28,22 +34,10 @@ jobs:
         with:
           python-version: '3.13'
       - name: Install dependencies
-        env:
-          DJANGO_DB_HOST: localhost
-          DJANGO_DB_PORT: 5432
-          DJANGO_DB_NAME: test_db
-          DJANGO_DB_USER: test_user
-          DJANGO_DB_PASSWORD: test_password
         run: |
           pip install uv
           make install
       - name: Run migrations
-        env:
-          DJANGO_DB_HOST: localhost
-          DJANGO_DB_PORT: 5432
-          DJANGO_DB_NAME: test_db
-          DJANGO_DB_USER: test_user
-          DJANGO_DB_PASSWORD: test_password
         run: |
           make migrate
           make apply migrations
