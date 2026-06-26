@@ -1,9 +1,9 @@
-from django.shortcuts import redirect, render
-from django.views import View
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import redirect, render
 from django.utils.translation import gettext_lazy as _
+from django.views import View
 
 from .forms import UserForm, UserUpdateForm
 from .models import Users
@@ -35,13 +35,18 @@ class UserCreateView(View):
         
         return render(request, "users/create_user.html", {"form": form})
 
+
 class UserUpdateView(OwnerTestMixin, View):
 
     def get(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
         user = Users.objects.get(pk=user_id)
         form = UserUpdateForm(instance=user)
-        return render(request, "users/update_user.html", {"form" :form, "user_id": user_id})
+        return render(
+            request, 
+            "users/update_user.html", 
+            {"form": form, "user_id": user_id}
+            )
 
     def post(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
@@ -49,10 +54,18 @@ class UserUpdateView(OwnerTestMixin, View):
         form = UserUpdateForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, _("User successfully updated"))
+            messages.add_message(
+                request, 
+                messages.SUCCESS, _("User successfully updated")
+                )
             return redirect("users:index")
         
-        return render(request, "users/update_user.html", {"form" :form, "user_id": user_id})
+        return render(
+            request, 
+            "users/update_user.html", 
+            {"form": form, "user_id": user_id}
+            )
+
 
 class UserDeleteView(OwnerTestMixin, View):
     
@@ -61,9 +74,13 @@ class UserDeleteView(OwnerTestMixin, View):
         user = Users.objects.get(pk=user_id)
         if user:
             user.delete()
-            messages.add_message(request, messages.SUCCESS, _("User successfully deleted"))
+            messages.add_message(
+                request, 
+                messages.SUCCESS, _("User successfully deleted")
+                )
             return redirect("users:index")
         
+
 class UserLoginView(View):
 
     def get(self, request, *args, **kwargs):
@@ -79,6 +96,7 @@ class UserLoginView(View):
             return redirect("index")
         
         return render(request, "users/login.html", {"form": form})
+
 
 class UserLogoutView(View):
 

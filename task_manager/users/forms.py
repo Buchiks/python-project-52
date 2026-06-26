@@ -1,5 +1,4 @@
-from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
 from .models import Users
@@ -17,7 +16,10 @@ class UserForm(UserCreationForm):
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].help_text = _("Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/_")
+        help_text = _("Required. No more than 150 symbols. "
+        "Only letters, digits and symbols @/./+/-/_")
+        self.fields['username'].help_text = help_text
+
 
 class UserUpdateForm(UserChangeForm):
     password = None

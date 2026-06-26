@@ -1,24 +1,30 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth import get_user_model
+
 from statuses.models import Status
 
 User = get_user_model()
 
+
 class StatusCRUDTest(TestCase):
     def setUp(self):
-            self.user = User.objects.create_user(
-            username='testuser',
-            password='testpass123'
+        self.user = User.objects.create_user(
+        username='testuser',
+        password='testpass123'
         )
             
-            self.status = Status.objects.create(
-                name='teststatus',
-            )
-            self.list_url = reverse("statuses:list")
-            self.create_url = reverse("statuses:create")
-            self.update_url = reverse('statuses:update', kwargs={"pk": self.status.pk})
-            self.delete_url = reverse('statuses:delete', kwargs={"pk": self.status.pk})
+        self.status = Status.objects.create(
+            name='teststatus',
+        )
+        self.list_url = reverse("statuses:list")
+        self.create_url = reverse("statuses:create")
+        self.update_url = reverse('statuses:update', kwargs={
+            "pk": self.status.pk
+            })
+        self.delete_url = reverse('statuses:delete', kwargs={
+            "pk": self.status.pk
+            })
     
     def test_status_list_not_logged_in(self):
         response = self.client.get(self.list_url)
@@ -42,7 +48,6 @@ class StatusCRUDTest(TestCase):
         
         self.assertEqual(response.status_code, 302)
 
-    
     def test_status_create(self):
         self.client.force_login(self.user)
 
@@ -56,7 +61,6 @@ class StatusCRUDTest(TestCase):
 
         self.assertContains(response, "something")
     
-    
     def test_update_status_not_allowed(self):
         response = self.client.get(self.update_url)
 
@@ -67,7 +71,6 @@ class StatusCRUDTest(TestCase):
             })
 
         self.assertEqual(response.status_code, 302)
-    
 
     def test_delete_status_not_allowed(self):
         response = self.client.get(self.delete_url)
@@ -77,7 +80,6 @@ class StatusCRUDTest(TestCase):
         self.client.post(self.delete_url)
 
         self.assertEqual(response.status_code, 302)
-
 
     def test_update_allowed(self):
         self.client.force_login(self.user)
@@ -97,7 +99,6 @@ class StatusCRUDTest(TestCase):
 
         self.assertContains(response, "something")
         self.assertNotContains(response, "teststatus")
-    
 
     def test_delete_allowed(self):
         self.client.force_login(self.user)
