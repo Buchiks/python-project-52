@@ -6,12 +6,30 @@ from statuses.models import Status
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=200, unique=True, error_messages={
-            'unique': _("already exists")
-            })
-    executor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="executor_tasks")
+    name = models.CharField(
+        max_length=200, 
+        unique=True, 
+        error_messages={'unique': _("already exists")},
+        verbose_name=_("Name")
+        )
+    executor = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.PROTECT, 
+        related_name="executor_tasks",
+        verbose_name=_("Implementer")
+        )
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='created_tasks')
-    status = models.ForeignKey(Status, on_delete=models.PROTECT, related_name='tasks' )
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE, 
+        related_name='created_tasks',
+        verbose_name=_("Author")
+        )
+    status = models.ForeignKey(
+        Status, 
+        on_delete=models.PROTECT, 
+        related_name='tasks',
+        verbose_name=_("Status") 
+        )

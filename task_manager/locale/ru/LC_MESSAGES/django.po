@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-26 15:16+0000\n"
+"POT-Creation-Date: 2026-06-26 15:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,7 @@ msgstr ""
 
 #: task_manager/statuses/forms.py:12
 #: task_manager/statuses/templates/statuses_list.html:24
+#: task_manager/tasks/models.py:13
 #: task_manager/tasks/templates/task_list.html:24
 #: task_manager/users/forms.py:12 task_manager/users/forms.py:31
 msgid "Name"
@@ -56,12 +57,15 @@ msgid "Delete"
 msgstr "Удалить"
 
 #: task_manager/statuses/templates/status_update.html:4
+#: task_manager/tasks/templates/update.html:4
 #: task_manager/users/templates/users/update_user.html:3
 msgid "Updation"
 msgstr "Обновление"
 
 #: task_manager/statuses/templates/status_update.html:6
 #: task_manager/statuses/templates/statuses_list.html:37
+#: task_manager/tasks/templates/task_list.html:43
+#: task_manager/tasks/templates/update.html:6
 #: task_manager/users/templates/users/update_user.html:5
 #: task_manager/users/templates/users/users_list.html:37
 msgid "Update"
@@ -102,9 +106,24 @@ msgstr "Это учебный проект"
 msgid "Something usefull"
 msgstr "Что-то полезное"
 
-#: task_manager/tasks/models.py:10
+#: task_manager/tasks/models.py:12
 msgid "already exists"
 msgstr "уже существует"
+
+#: task_manager/tasks/models.py:19
+#: task_manager/tasks/templates/task_list.html:27
+msgid "Implementer"
+msgstr "Испольнитель"
+
+#: task_manager/tasks/models.py:28
+#: task_manager/tasks/templates/task_list.html:26
+msgid "Author"
+msgstr "Автор"
+
+#: task_manager/tasks/models.py:34
+#: task_manager/tasks/templates/task_list.html:25
+msgid "Status"
+msgstr "Статус"
 
 #: task_manager/tasks/templates/create.html:9
 #: task_manager/tasks/templates/task_list.html:19
@@ -116,17 +135,9 @@ msgstr "Создать задачу"
 msgid "Tasks"
 msgstr "Задачи"
 
-#: task_manager/tasks/templates/task_list.html:25
-msgid "Status"
-msgstr "Статус"
-
-#: task_manager/tasks/templates/task_list.html:26
-msgid "Author"
-msgstr "Автор"
-
-#: task_manager/tasks/templates/task_list.html:27
-msgid "Implementer"
-msgstr "Испольнитель"
+#: task_manager/tasks/utils.py:20 task_manager/users/utils.py:18
+msgid "You don't have permission"
+msgstr "У вас нет прав для изменения"
 
 #: task_manager/templates/base.html:19
 msgid "Task manager"
@@ -184,10 +195,6 @@ msgstr "Войти"
 #: task_manager/users/templates/users/users_list.html:24
 msgid "Full name"
 msgstr "Полное имя"
-
-#: task_manager/users/utils.py:18
-msgid "You don't have permission"
-msgstr "У вас нет прав для изменения"
 
 #: task_manager/users/views.py:59
 msgid "User successfully updated"
