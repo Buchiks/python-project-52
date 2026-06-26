@@ -35,16 +35,7 @@
                     <td class="col-3">{{ status.created_at }}</td>
                     <td class="col-3">
                         <a href="{% url 'statuses:update' pk=status.id %}">{% translate "Update" %}</a>
-                        {% comment %}
-                        <div>
-                            {% translate "Are you sure?" as confirmation %}
-                            <form action="{% url 'statuses:delete' pk=user.id %}" method="post"
-                                onsubmit="return confirm('{{ confirmation }}')">
-                                {% csrf_token %}
-                                <input type="submit" class="btn btn-link" value="{% translate 'Delete' %}">
-                            </form>
-                        </div>
-                        {% endcomment %}
+                        <a href="{% url 'statuses:delete' pk=status.id %}">{% translate "Delete" %}</a>
                     </td>
                 </tr>
                 {% endfor %}

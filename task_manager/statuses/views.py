@@ -44,3 +44,17 @@ class StatusesUpdateView(LoginRequiredMixin, View):
             return redirect("statuses:list")
         
         return render(request, "status_update.html", {"form" :form, "status_id": status_id})
+
+class StatusesDeleteView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        status_id = kwargs.get("pk")
+        status = Status.objects.get(pk=status_id)
+        return render(request, "status_delete.html",{"status": status})
+    
+    def post(self, request, *args, **kwargs):
+        status_id = kwargs.get("pk")
+        status = Status.objects.get(pk=status_id)
+        if status:
+            status.delete()
+            messages.add_message(request, messages.SUCCESS, _("Status successfully deleted"))
+            return redirect("statuses:list")

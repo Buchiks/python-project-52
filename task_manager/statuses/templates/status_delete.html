@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <h1>{% translate "Deletion" %}</h1>
+        <p class="lead">{% translate "Are you sure you want to delete this status: " %}{{ status.name }}?</p>
+        <form action="{% url 'statuses:delete' pk=status.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="{% translate 'Delete' %}">
+        </form>
+    </div>
+</main>
+{% endblock %}
