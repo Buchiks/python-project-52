@@ -1,11 +1,14 @@
 from django.db import models
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 from statuses.models import Status
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200, unique=True, error_messages={
+            'unique': _("already exists")
+            })
     executor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="executor_tasks")
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
