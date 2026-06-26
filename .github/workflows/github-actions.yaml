@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          make install
+          make install --dev
       - name: Run migrations
         env:
           DJANGO_DB_HOST: localhost
