@@ -31,7 +31,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         response = super().form_valid(form)
-        messages.success(self.request, _('Task successfuly created'))
+        messages.success(self.request, _('Task successfully created'))
         return response
 
 
@@ -44,7 +44,7 @@ class TaskUpdateView(LoginRequiredMixin, OwnerTestMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        messages.success(self.request, _('Task successfuly updated'))
+        messages.success(self.request, _('Task successfully updated'))
         return response
 
 
@@ -56,7 +56,7 @@ class TaskDeleteView(LoginRequiredMixin, DeleteOwnerTestMixin, DeleteView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        messages.success(self.request, _('Task successfuly deleted'))
+        messages.success(self.request, _('Task successfully deleted'))
         return response
 
 
