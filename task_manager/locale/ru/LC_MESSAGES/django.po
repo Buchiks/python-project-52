@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-26 15:35+0000\n"
+"POT-Creation-Date: 2026-06-28 11:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,6 +52,8 @@ msgstr "Вы уверены, что хотите удалить этот ста�
 
 #: task_manager/statuses/templates/status_delete.html:12
 #: task_manager/statuses/templates/statuses_list.html:38
+#: task_manager/tasks/templates/delete.html:16
+#: task_manager/tasks/templates/task_list.html:44
 #: task_manager/users/templates/users/users_list.html:43
 msgid "Delete"
 msgstr "Удалить"
@@ -130,6 +132,10 @@ msgstr "Статус"
 msgid "Create task"
 msgstr "Создать задачу"
 
+#: task_manager/tasks/templates/delete.html:12
+msgid "Are you sure you want to delete this task?"
+msgstr "Вы уверены, что хотите удалить эту задачу?"
+
 #: task_manager/tasks/templates/task_list.html:18
 #: task_manager/templates/base.html:38
 msgid "Tasks"
@@ -138,6 +144,10 @@ msgstr "Задачи"
 #: task_manager/tasks/utils.py:20 task_manager/users/utils.py:18
 msgid "You don't have permission"
 msgstr "У вас нет прав для изменения"
+
+#: task_manager/tasks/utils.py:28
+msgid "Task can only be deleted by it's author"
+msgstr "Задачу может удалить только ее автор"
 
 #: task_manager/templates/base.html:19
 msgid "Task manager"

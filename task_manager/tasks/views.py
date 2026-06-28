@@ -1,13 +1,13 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.shortcuts import redirect, render
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse_lazy
 from django.views import View
 
 from .models import Task
-
+from .utils import OwnerTestMixin, DeleteOwnerTestMixin
 
 class TasksListView(LoginRequiredMixin, View):
 
@@ -31,8 +31,14 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskUpdateView(LoginRequiredMixin, UpdateView):
+class TaskUpdateView(LoginRequiredMixin, OwnerTestMixin, UpdateView):
     model = Task
     fields = ["name", "executor", "status"]
     template_name = "update.html"
+    success_url = reverse_lazy("tasks:list")
+
+
+class TaskDeleteView(LoginRequiredMixin, DeleteOwnerTestMixin, DeleteView):
+    model = Task
+    template_name = "delete.html"
     success_url = reverse_lazy("tasks:list")

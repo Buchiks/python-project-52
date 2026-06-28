@@ -41,9 +41,7 @@
                     <td class="col-2">{{ task.created_at }}</td>
                     <td class="col-1">
                         <a href="{% url 'tasks:update' pk=task.id %}">{% translate "Update" %}</a>
-                        {% comment %}
                         <a href="{% url 'tasks:delete' pk=task.id %}">{% translate "Delete" %}</a>
-                        {% endcomment %}
                     </td>
                 </tr>
                 {% endfor %}
