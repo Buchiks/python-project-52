@@ -31,3 +31,15 @@ class LabelCreateView(LoginRequiredMixin, CreateView):
         response = super().form_valid(form)
         messages.success(self.request, _('Label successfully created'))
         return response
+
+class LabelUpdateView(LoginRequiredMixin, UpdateView):
+
+    model = Label
+    fields = ["name"]
+    template_name = "labels/update.html"
+    success_url = reverse_lazy("labels:list")
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, _('Label successfully updated'))
+        return response

@@ -1,0 +1,7 @@
+{% load i18n %}
+
+
+{% translate "Updation" as header %}
+{% url 'labels:update' pk=label.id as action_url %}
+{% translate 'Update' as button %}
+{% include "labels/create.html" with form_action=action_url input_value=button title='Label Updation' %}

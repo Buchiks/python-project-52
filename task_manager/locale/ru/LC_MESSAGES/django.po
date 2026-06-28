@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 15:38+0000\n"
+"POT-Creation-Date: 2026-06-28 15:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,9 +63,32 @@ msgstr "Имя"
 msgid "Creation date"
 msgstr "Дата создания"
 
+#: task_manager/labels/templates/labels/list.html:37
+#: task_manager/labels/templates/labels/update.html:6
+#: task_manager/statuses/templates/status_update.html:6
+#: task_manager/statuses/templates/statuses_list.html:37
+#: task_manager/tasks/templates/show.html:34
+#: task_manager/tasks/templates/task_list.html:43
+#: task_manager/tasks/templates/update.html:6
+#: task_manager/users/templates/users/update_user.html:5
+#: task_manager/users/templates/users/users_list.html:37
+msgid "Update"
+msgstr "Изменить"
+
+#: task_manager/labels/templates/labels/update.html:4
+#: task_manager/statuses/templates/status_update.html:4
+#: task_manager/tasks/templates/update.html:4
+#: task_manager/users/templates/users/update_user.html:3
+msgid "Updation"
+msgstr "Обновление"
+
 #: task_manager/labels/views.py:32
 msgid "Label successfully created"
 msgstr "Метка успешно создана"
+
+#: task_manager/labels/views.py:44
+msgid "Label successfully updated"
+msgstr "Метка успешно изменена"
 
 #: task_manager/statuses/forms.py:16
 msgid "Status with this Name already exists."
@@ -92,22 +115,6 @@ msgstr "Вы уверены, что хотите удалить этот ста�
 #: task_manager/users/templates/users/users_list.html:43
 msgid "Delete"
 msgstr "Удалить"
-
-#: task_manager/statuses/templates/status_update.html:4
-#: task_manager/tasks/templates/update.html:4
-#: task_manager/users/templates/users/update_user.html:3
-msgid "Updation"
-msgstr "Обновление"
-
-#: task_manager/statuses/templates/status_update.html:6
-#: task_manager/statuses/templates/statuses_list.html:37
-#: task_manager/tasks/templates/show.html:34
-#: task_manager/tasks/templates/task_list.html:43
-#: task_manager/tasks/templates/update.html:6
-#: task_manager/users/templates/users/update_user.html:5
-#: task_manager/users/templates/users/users_list.html:37
-msgid "Update"
-msgstr "Изменить"
 
 #: task_manager/statuses/templates/statuses_list.html:18
 #: task_manager/templates/base.html:33
