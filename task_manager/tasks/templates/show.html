@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+
+{% block title %}Task{% endblock %}
+
+{% block content %}
+<main class="container">
+    <h1 class="mb-4">{% translate "Task view" %}</h1>
+    <div class="p-2 rounded bg-secondary text-white border">
+        <h2>{{ task.name }}</h2>
+    </div>
+    <div class="p-5 rounded bg-light border">
+        <table class="table table-borderless" data-test="urls">
+            <tr>
+                <th class="col-7 fw-semibold bg-light">{% translate 'Author' %}</th>
+                <th class="col-5 fw-semibold bg-light">{{ task.author }}</th>
+            </tr>
+            <tr>
+                <th class="fw-semibold bg-light">{% translate 'Implementer' %}</th>
+                <th class="fw-semibold bg-light">{{ task.executor }}</th>
+            </tr>
+            <tr>
+                <th class="fw-semibold bg-light">{% translate 'Status' %}</th>
+                <th class="fw-semibold bg-light">{{ task.status}}</th>
+            </tr>
+            <tr>
+                <th class="fw-semibold bg-light">{% translate 'Creation date' %}</th>
+                <th class="fw-semibold bg-light">{{ task.created_at }}</th>
+            </tr>
+            <tr>
+                <th class="fw-semibold bg-light">
+                    <a class="me-2" href="{% url 'tasks:update' pk=task.id %}">{% translate "Update" %}</a>
+                    <br>
+                    <a class="me-2" href="{% url 'tasks:delete' pk=task.id %}">{% translate "Delete" %}</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+</main>
+{% endblock %}

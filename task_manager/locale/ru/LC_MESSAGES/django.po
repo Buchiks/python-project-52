@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 11:55+0000\n"
+"POT-Creation-Date: 2026-06-28 12:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,7 @@ msgstr "Вы уверены, что хотите удалить этот ста�
 #: task_manager/statuses/templates/status_delete.html:12
 #: task_manager/statuses/templates/statuses_list.html:38
 #: task_manager/tasks/templates/delete.html:16
+#: task_manager/tasks/templates/show.html:36
 #: task_manager/tasks/templates/task_list.html:44
 #: task_manager/users/templates/users/users_list.html:43
 msgid "Delete"
@@ -66,6 +67,7 @@ msgstr "Обновление"
 
 #: task_manager/statuses/templates/status_update.html:6
 #: task_manager/statuses/templates/statuses_list.html:37
+#: task_manager/tasks/templates/show.html:34
 #: task_manager/tasks/templates/task_list.html:43
 #: task_manager/tasks/templates/update.html:6
 #: task_manager/users/templates/users/update_user.html:5
@@ -79,6 +81,7 @@ msgid "Statuses"
 msgstr "Статусы"
 
 #: task_manager/statuses/templates/statuses_list.html:25
+#: task_manager/tasks/templates/show.html:29
 #: task_manager/tasks/templates/task_list.html:28
 #: task_manager/users/templates/users/users_list.html:25
 msgid "Creation date"
@@ -112,17 +115,17 @@ msgstr "Что-то полезное"
 msgid "already exists"
 msgstr "уже существует"
 
-#: task_manager/tasks/models.py:19
+#: task_manager/tasks/models.py:19 task_manager/tasks/templates/show.html:21
 #: task_manager/tasks/templates/task_list.html:27
 msgid "Implementer"
 msgstr "Испольнитель"
 
-#: task_manager/tasks/models.py:28
+#: task_manager/tasks/models.py:28 task_manager/tasks/templates/show.html:17
 #: task_manager/tasks/templates/task_list.html:26
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/tasks/models.py:34
+#: task_manager/tasks/models.py:34 task_manager/tasks/templates/show.html:25
 #: task_manager/tasks/templates/task_list.html:25
 msgid "Status"
 msgstr "Статус"
@@ -135,6 +138,10 @@ msgstr "Создать задачу"
 #: task_manager/tasks/templates/delete.html:12
 msgid "Are you sure you want to delete this task?"
 msgstr "Вы уверены, что хотите удалить эту задачу?"
+
+#: task_manager/tasks/templates/show.html:10
+msgid "Task view"
+msgstr "Просмотр задачи"
 
 #: task_manager/tasks/templates/task_list.html:18
 #: task_manager/templates/base.html:38

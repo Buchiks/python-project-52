@@ -21,6 +21,7 @@ class TasksListView(LoginRequiredMixin, View):
 
 
 class TaskCreateView(LoginRequiredMixin, CreateView):
+    
     model = Task
     fields = ["name", "executor", "status"]
     template_name = "create.html"
@@ -32,6 +33,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
 
 
 class TaskUpdateView(LoginRequiredMixin, OwnerTestMixin, UpdateView):
+    
     model = Task
     fields = ["name", "executor", "status"]
     template_name = "update.html"
@@ -39,6 +41,14 @@ class TaskUpdateView(LoginRequiredMixin, OwnerTestMixin, UpdateView):
 
 
 class TaskDeleteView(LoginRequiredMixin, DeleteOwnerTestMixin, DeleteView):
+    
     model = Task
     template_name = "delete.html"
     success_url = reverse_lazy("tasks:list")
+
+class TaskShowView(LoginRequiredMixin, View):
+    
+    def get(self, request, *args, **kwargs):
+        task_pk = kwargs.get("pk")
+        task = Task.objects.get(pk=task_pk)
+        return render(request, "show.html", {"task": task})
