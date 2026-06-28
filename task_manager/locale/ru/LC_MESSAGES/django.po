@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 14:27+0000\n"
+"POT-Creation-Date: 2026-06-28 15:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,36 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/labels/models.py:13
+#: task_manager/labels/models.py:10 task_manager/tasks/models.py:11
+msgid "already exists"
+msgstr "уже существует"
+
+#: task_manager/labels/models.py:17
 #: task_manager/tasks/templates/task_list.html:18
-#: task_manager/templates/base.html:38
+#: task_manager/templates/base.html:43
 msgid "Tasks"
 msgstr "Задачи"
 
-#: task_manager/statuses/forms.py:12
+#: task_manager/labels/templates/list.html:18
+#: task_manager/templates/base.html:38
+msgid "Labels"
+msgstr "Метки"
+
+#: task_manager/labels/templates/list.html:27 task_manager/statuses/forms.py:12
 #: task_manager/statuses/templates/statuses_list.html:24
 #: task_manager/tasks/models.py:12
 #: task_manager/tasks/templates/task_list.html:24
 #: task_manager/users/forms.py:12 task_manager/users/forms.py:31
 msgid "Name"
 msgstr "Имя"
+
+#: task_manager/labels/templates/list.html:28
+#: task_manager/statuses/templates/statuses_list.html:25
+#: task_manager/tasks/templates/show.html:29
+#: task_manager/tasks/templates/task_list.html:28
+#: task_manager/users/templates/users/users_list.html:25
+msgid "Creation date"
+msgstr "Дата создания"
 
 #: task_manager/statuses/forms.py:16
 msgid "Status with this Name already exists."
@@ -86,13 +103,6 @@ msgstr "Изменить"
 msgid "Statuses"
 msgstr "Статусы"
 
-#: task_manager/statuses/templates/statuses_list.html:25
-#: task_manager/tasks/templates/show.html:29
-#: task_manager/tasks/templates/task_list.html:28
-#: task_manager/users/templates/users/users_list.html:25
-msgid "Creation date"
-msgstr "Дата создания"
-
 #: task_manager/statuses/views.py:29
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
@@ -116,10 +126,6 @@ msgstr "Это учебный проект"
 #: task_manager/task_manager/templates/index.html:20
 msgid "Something usefull"
 msgstr "Что-то полезное"
-
-#: task_manager/tasks/models.py:11
-msgid "already exists"
-msgstr "уже существует"
 
 #: task_manager/tasks/models.py:18 task_manager/tasks/templates/show.html:21
 #: task_manager/tasks/templates/task_list.html:27
@@ -178,22 +184,22 @@ msgstr "Менеджер Задач"
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/base.html:43
+#: task_manager/templates/base.html:48
 #: task_manager/users/templates/users/login.html:3
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/templates/base.html:49
+#: task_manager/templates/base.html:54
 #: task_manager/users/templates/users/create_user.html:9
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/templates/base.html:55
+#: task_manager/templates/base.html:60
 #: task_manager/users/templates/users/users_list.html:39
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: task_manager/templates/base.html:59
+#: task_manager/templates/base.html:64
 msgid "Logout"
 msgstr "Выход"
 

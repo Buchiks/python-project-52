@@ -35,6 +35,11 @@
                     {% endif %}
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'labels:list' %}">{% translate "Labels" %}</a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
                         <a class="nav-link active" href="{% url 'tasks:list' %}">{% translate "Tasks" %}</a>
                     </li>
                     {% endif %}

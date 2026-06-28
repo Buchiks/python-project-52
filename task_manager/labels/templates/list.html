@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+
+{% block title %}List of labels{% endblock %}
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissable fade show" role="alert">
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <h1>{% translate "Labels" %}</h1>
+        {% comment %}
+        <a class="btn btn-primary my-3" href="{% url 'labels:create' %}">{% translate "Create label" %}</a>
+        {% endcomment %}
+        <table class="table table-bordered" data-test="urls">
+            <thead>
+                <tr>
+                    <th class="col-1 fw-semibold">ID</th>
+                    <th class="col-5 fw-semibold">{% translate "Name" %}</th>
+                    <th class="col-5 fw-semibold">{% translate "Creation date" %}</th>
+                    <th class="col-1 fw-semibold"></th>
+                </tr>
+            </thead>
+            {% if labels %}
+            <tbody>
+                {% for label in labels %}
+                <tr>
+                    <td class="col-1">{{ task.id }}</td>
+                    <td class="col-5">{{ task.name }}</td>
+                    <td class="col-5">{{ task.created_at }}</td>
+                    <td class="col-1">
+                        {% comment %}
+                        <a href="{% url 'labels:update' pk=label.id %}">{% translate "Update" %}</a>
+                        <a href="{% url 'labels:delete' pk=label.id %}">{% translate "Delete" %}</a>
+                        {% endcomment %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endif %}
+        </table>
+    </div>
+</main>
+{% endblock %}
