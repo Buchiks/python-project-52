@@ -36,7 +36,7 @@ class LabelCRUDTest(TestCase):
         )
 
         self.label_tasked = Label.objects.create(
-            name='testlabel_with_task',
+            name='label_with_task',
         )
         self.task.labels.add(self.label_tasked)   
 
