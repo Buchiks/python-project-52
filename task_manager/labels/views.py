@@ -33,6 +33,7 @@ class LabelCreateView(LoginRequiredMixin, CreateView):
         messages.success(self.request, _('Label successfully created'))
         return response
 
+
 class LabelUpdateView(LoginRequiredMixin, UpdateView):
 
     model = Label
@@ -44,6 +45,7 @@ class LabelUpdateView(LoginRequiredMixin, UpdateView):
         response = super().form_valid(form)
         messages.success(self.request, _('Label successfully updated'))
         return response
+
 
 class LabelDeleteView(LabelHasTasksTestMixin, LoginRequiredMixin, DeleteView):
 

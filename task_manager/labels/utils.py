@@ -12,7 +12,6 @@ class LabelHasTasksTestMixin(UserPassesTestMixin):
         label = self.get_object()
         return not label.tasks.exists() 
 
-    
     def handle_no_permission(self):
         messages.add_message(
             self.request, 
