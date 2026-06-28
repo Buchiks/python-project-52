@@ -30,6 +30,16 @@
                 <th class="fw-semibold bg-light">{{ task.created_at }}</th>
             </tr>
             <tr>
+                <th class="fw-semibold bg-light">{% translate 'Labels' %}
+                    <ul>
+                        {% for label in task.labels.all %}
+                        <li>{{ label }}</li>
+                        {% endfor %}
+                    </ul>
+                </th>
+                <th class="fw-semibold bg-light"></th>
+            </tr>
+            <tr>
                 <th class="fw-semibold bg-light">
                     <a class="me-2" href="{% url 'tasks:update' pk=task.id %}">{% translate "Update" %}</a>
                     <br>
