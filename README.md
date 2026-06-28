@@ -1,3 +1,5 @@
+Учебный проект "Менеджер задач" онлайн-школы hexlet.io, выполняемый на фреймворке Django
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Buchiks/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Buchiks/python-project-52/actions)
 
