@@ -96,7 +96,7 @@ class TaskCRUDTest(TestCase):
 
         self.assertEqual(response.status_code, 302) 
 
-        self.client.post(self.delete_url)
+        response = self.client.post(self.delete_url)
 
         self.assertEqual(response.status_code, 302)
 
