@@ -16,9 +16,7 @@
 <main class="container">
     <div class="bg-light p-5 rounded">
         <h1>{% translate "Labels" %}</h1>
-        {% comment %}
         <a class="btn btn-primary my-3" href="{% url 'labels:create' %}">{% translate "Create label" %}</a>
-        {% endcomment %}
         <table class="table table-bordered" data-test="urls">
             <thead>
                 <tr>
@@ -32,9 +30,9 @@
             <tbody>
                 {% for label in labels %}
                 <tr>
-                    <td class="col-1">{{ task.id }}</td>
-                    <td class="col-5">{{ task.name }}</td>
-                    <td class="col-5">{{ task.created_at }}</td>
+                    <td class="col-1">{{ label.id }}</td>
+                    <td class="col-5">{{ label.name }}</td>
+                    <td class="col-5">{{ label.created_at }}</td>
                     <td class="col-1">
                         {% comment %}
                         <a href="{% url 'labels:update' pk=label.id %}">{% translate "Update" %}</a>

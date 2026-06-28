@@ -6,7 +6,7 @@ app_name = 'labels'
 
 urlpatterns = [
     path("", views.LabelsListView.as_view(), name="list"),
-    #path("create/", , name="create"),
+    path("create/", views.LabelCreateView.as_view(), name="create"),
     #path("<int:pk>/update/", , name="update"),
     #path("<int:pk>/delete/", , name="delete"),
 ]

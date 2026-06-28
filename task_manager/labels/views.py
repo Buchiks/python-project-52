@@ -15,6 +15,19 @@ class LabelsListView(LoginRequiredMixin, View):
         labels = Label.objects.all()
         return render(
             request,
-            "list.html",
+            "labels/list.html",
             {"labels": labels}
         )
+    
+
+class LabelCreateView(LoginRequiredMixin, CreateView):
+    
+    model = Label
+    fields = ["name"]
+    template_name = "labels/create.html"
+    success_url = reverse_lazy("labels:list")
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, _('Label successfully created'))
+        return response
