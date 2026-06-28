@@ -12,7 +12,8 @@ class OwnerTestMixin(UserPassesTestMixin):
 
     def test_func(self):
         task = Task.objects.get(pk=self.kwargs.get("pk"))
-        return self.request.user == task.author or self.request.user.is_superuser
+        return (self.request.user == task.author 
+                or self.request.user.is_superuser)
     
     def handle_no_permission(self):
         messages.add_message(
@@ -21,6 +22,7 @@ class OwnerTestMixin(UserPassesTestMixin):
             )
         return redirect('tasks:list')
     
+
 class DeleteOwnerTestMixin(OwnerTestMixin):
     def handle_no_permission(self):
         messages.add_message(

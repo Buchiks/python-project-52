@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-
 from statuses.models import Status
+
 from tasks.models import Task
 
 User = get_user_model()
@@ -24,10 +24,10 @@ class TaskCRUDTest(TestCase):
         )
 
         self.task = Task.objects.create(
-            name= "testtask",
-            author= self.user,
-            executor = self.exec,
-            status = self.status
+            name="testtask",
+            author=self.user,
+            executor=self.exec,
+            status=self.status
         )
 
         self.list_url = reverse("tasks:list")
