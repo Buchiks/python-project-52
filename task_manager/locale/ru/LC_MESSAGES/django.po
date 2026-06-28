@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 19:21+0000\n"
+"POT-Creation-Date: 2026-06-28 19:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,16 @@ msgstr ""
 #: task_manager/labels/models.py:9 task_manager/tasks/models.py:11
 msgid "already exists"
 msgstr "уже существует"
+
+#: task_manager/labels/models.py:10
+#: task_manager/labels/templates/labels/list.html:24
+#: task_manager/statuses/forms.py:12
+#: task_manager/statuses/templates/statuses_list.html:24
+#: task_manager/tasks/models.py:12
+#: task_manager/tasks/templates/task_list.html:24
+#: task_manager/users/forms.py:12 task_manager/users/forms.py:31
+msgid "Name"
+msgstr "Имя"
 
 #: task_manager/labels/templates/labels/create.html:9
 #: task_manager/labels/templates/labels/list.html:19
@@ -44,25 +54,17 @@ msgstr "Вы уверены, что хотите удалить эту метк�
 #: task_manager/statuses/templates/status_delete.html:12
 #: task_manager/statuses/templates/statuses_list.html:38
 #: task_manager/tasks/templates/delete.html:16
-#: task_manager/tasks/templates/show.html:36
+#: task_manager/tasks/templates/show.html:46
 #: task_manager/tasks/templates/task_list.html:44
 #: task_manager/users/templates/users/users_list.html:43
 msgid "Delete"
 msgstr "Удалить"
 
 #: task_manager/labels/templates/labels/list.html:18
+#: task_manager/tasks/templates/show.html:33
 #: task_manager/templates/base.html:38
 msgid "Labels"
 msgstr "Метки"
-
-#: task_manager/labels/templates/labels/list.html:24
-#: task_manager/statuses/forms.py:12
-#: task_manager/statuses/templates/statuses_list.html:24
-#: task_manager/tasks/models.py:12
-#: task_manager/tasks/templates/task_list.html:24
-#: task_manager/users/forms.py:12 task_manager/users/forms.py:31
-msgid "Name"
-msgstr "Имя"
 
 #: task_manager/labels/templates/labels/list.html:25
 #: task_manager/statuses/templates/statuses_list.html:25
@@ -76,7 +78,7 @@ msgstr "Дата создания"
 #: task_manager/labels/templates/labels/update.html:6
 #: task_manager/statuses/templates/status_update.html:6
 #: task_manager/statuses/templates/statuses_list.html:37
-#: task_manager/tasks/templates/show.html:34
+#: task_manager/tasks/templates/show.html:44
 #: task_manager/tasks/templates/task_list.html:43
 #: task_manager/tasks/templates/update.html:6
 #: task_manager/users/templates/users/update_user.html:5

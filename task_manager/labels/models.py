@@ -7,6 +7,7 @@ class Label(models.Model):
         max_length=200, 
         unique=True,
         error_messages={'unique': _("already exists")},
+        verbose_name=_("Name"),
         )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
