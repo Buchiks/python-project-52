@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 16:01+0000\n"
+"POT-Creation-Date: 2026-06-28 19:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,9 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/labels/models.py:10 task_manager/tasks/models.py:11
+#: task_manager/labels/models.py:9 task_manager/tasks/models.py:11
 msgid "already exists"
 msgstr "уже существует"
-
-#: task_manager/labels/models.py:17
-#: task_manager/tasks/templates/task_list.html:18
-#: task_manager/templates/base.html:43
-msgid "Tasks"
-msgstr "Задачи"
 
 #: task_manager/labels/templates/labels/create.html:9
 #: task_manager/labels/templates/labels/list.html:19
@@ -98,10 +92,8 @@ msgid "Updation"
 msgstr "Обновление"
 
 #: task_manager/labels/utils.py:19
-#, fuzzy
-#| msgid "Create label"
 msgid "Cannot delete label"
-msgstr "Создать метку"
+msgstr "Невозможно удалить метку"
 
 #: task_manager/labels/views.py:33
 msgid "Label successfully created"
@@ -176,6 +168,10 @@ msgstr "Автор"
 msgid "Status"
 msgstr "Статус"
 
+#: task_manager/tasks/models.py:38
+msgid "Label"
+msgstr "Метка"
+
 #: task_manager/tasks/templates/create.html:9
 #: task_manager/tasks/templates/task_list.html:19
 msgid "Create task"
@@ -188,6 +184,11 @@ msgstr "Вы уверены, что хотите удалить эту зада�
 #: task_manager/tasks/templates/show.html:10
 msgid "Task view"
 msgstr "Просмотр задачи"
+
+#: task_manager/tasks/templates/task_list.html:18
+#: task_manager/templates/base.html:43
+msgid "Tasks"
+msgstr "Задачи"
 
 #: task_manager/tasks/utils.py:21 task_manager/users/utils.py:18
 msgid "You don't have permission"

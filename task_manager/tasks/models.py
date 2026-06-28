@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from statuses.models import Status
-
+from labels.models import Label
 
 class Task(models.Model):
     name = models.CharField(
@@ -31,4 +31,10 @@ class Task(models.Model):
         on_delete=models.PROTECT, 
         related_name='tasks',
         verbose_name=_("Status") 
+        )
+    labels = models.ManyToManyField(
+        Label, 
+        related_name='tasks',
+        verbose_name=_("Label"),
+        blank=True
         )
