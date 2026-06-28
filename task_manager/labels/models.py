@@ -4,7 +4,11 @@ from tasks.models import Task
 
 
 class Label(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(
+        max_length=200, 
+        unique=True,
+        error_messages={'unique': _("already exists")},
+        )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     tasks = models.ManyToManyField(
