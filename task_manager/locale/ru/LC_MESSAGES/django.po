@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 15:47+0000\n"
+"POT-Creation-Date: 2026-06-28 16:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,21 @@ msgstr "Создать метку"
 #: task_manager/tasks/templates/create.html:17
 msgid "Create"
 msgstr "Создать"
+
+#: task_manager/labels/templates/labels/delete.html:12
+msgid "Are you sure you want to delete this label?"
+msgstr "Вы уверены, что хотите удалить эту метку?"
+
+#: task_manager/labels/templates/labels/delete.html:16
+#: task_manager/labels/templates/labels/list.html:38
+#: task_manager/statuses/templates/status_delete.html:12
+#: task_manager/statuses/templates/statuses_list.html:38
+#: task_manager/tasks/templates/delete.html:16
+#: task_manager/tasks/templates/show.html:36
+#: task_manager/tasks/templates/task_list.html:44
+#: task_manager/users/templates/users/users_list.html:43
+msgid "Delete"
+msgstr "Удалить"
 
 #: task_manager/labels/templates/labels/list.html:18
 #: task_manager/templates/base.html:38
@@ -82,13 +97,23 @@ msgstr "Изменить"
 msgid "Updation"
 msgstr "Обновление"
 
-#: task_manager/labels/views.py:32
+#: task_manager/labels/utils.py:19
+#, fuzzy
+#| msgid "Create label"
+msgid "Cannot delete label"
+msgstr "Создать метку"
+
+#: task_manager/labels/views.py:33
 msgid "Label successfully created"
 msgstr "Метка успешно создана"
 
-#: task_manager/labels/views.py:44
+#: task_manager/labels/views.py:45
 msgid "Label successfully updated"
 msgstr "Метка успешно изменена"
+
+#: task_manager/labels/views.py:57
+msgid "Label successfully deleted"
+msgstr "Метка успешно удалена"
 
 #: task_manager/statuses/forms.py:16
 msgid "Status with this Name already exists."
@@ -106,15 +131,6 @@ msgstr "Удаление"
 #: task_manager/statuses/templates/status_delete.html:9
 msgid "Are you sure you want to delete this status: "
 msgstr "Вы уверены, что хотите удалить этот статус: "
-
-#: task_manager/statuses/templates/status_delete.html:12
-#: task_manager/statuses/templates/statuses_list.html:38
-#: task_manager/tasks/templates/delete.html:16
-#: task_manager/tasks/templates/show.html:36
-#: task_manager/tasks/templates/task_list.html:44
-#: task_manager/users/templates/users/users_list.html:43
-msgid "Delete"
-msgstr "Удалить"
 
 #: task_manager/statuses/templates/statuses_list.html:18
 #: task_manager/templates/base.html:33

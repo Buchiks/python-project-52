@@ -7,6 +7,7 @@ from django.views import View
 from django.views.generic import CreateView, DeleteView, UpdateView
 
 from .models import Label
+from .utils import LabelHasTasksTestMixin
 
 
 class LabelsListView(LoginRequiredMixin, View):
@@ -42,4 +43,16 @@ class LabelUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         messages.success(self.request, _('Label successfully updated'))
+        return response
+
+class LabelDeleteView(LabelHasTasksTestMixin, LoginRequiredMixin, DeleteView):
+
+    model = Label
+    fields = ["name"]
+    template_name = "labels/delete.html"
+    success_url = reverse_lazy("labels:list")
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, _('Label successfully deleted'))
         return response

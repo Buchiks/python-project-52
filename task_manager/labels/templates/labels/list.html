@@ -35,9 +35,7 @@
                     <td class="col-5">{{ label.created_at }}</td>
                     <td class="col-1">
                         <a href="{% url 'labels:update' pk=label.id %}">{% translate "Update" %}</a>
-                        {% comment %}
                         <a href="{% url 'labels:delete' pk=label.id %}">{% translate "Delete" %}</a>
-                        {% endcomment %}
                     </td>
                 </tr>
                 {% endfor %}
