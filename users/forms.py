@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
 from .models import Users
@@ -32,4 +32,10 @@ class UserUpdateForm(UserChangeForm):
             "last_name": _("Surname"),
             "username": _("Nickname")
             }
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].label = _("Nickname")
         

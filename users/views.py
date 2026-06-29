@@ -1,11 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout
-from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import redirect, render
 from django.utils.translation import gettext_lazy as _
 from django.views import View
 
-from .forms import UserForm, UserUpdateForm
+from .forms import CustomAuthenticationForm, UserForm, UserUpdateForm
 from .models import Users
 from .utils import OwnerTestMixin
 
@@ -88,11 +87,11 @@ class UserDeleteView(OwnerTestMixin, View):
 class UserLoginView(View):
 
     def get(self, request, *args, **kwargs):
-        form = AuthenticationForm()
+        form = CustomAuthenticationForm()
         return render(request, "users/login.html", {"form": form})
     
     def post(self, request, *args, **kwargs):
-        form = AuthenticationForm(request, data=request.POST)
+        form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
