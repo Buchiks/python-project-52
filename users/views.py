@@ -101,5 +101,5 @@ class UserLogoutView(LogoutView):
     
     def dispatch(self, request, *args, **kwargs):
         response = super().dispatch(request, *args, **kwargs)
-        messages.success(request, _("You signed out"))
+        messages.info(request, _("You signed out"))
         return response
