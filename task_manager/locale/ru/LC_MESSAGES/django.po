@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-29 14:34+0000\n"
+"POT-Creation-Date: 2026-06-29 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,22 +144,22 @@ msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
 
 #: task_manager/task_manager/templates/index.html:18
-msgid "Welcome!"
-msgstr "Привет!"
+msgid "Welcome from Buchik!"
+msgstr "Привет от Buchik!"
 
 #: task_manager/task_manager/templates/index.html:19
-msgid "This is a study project"
-msgstr "Это учебный проект"
+msgid "This is a study project 'Task Manager'"
+msgstr "Это учебный проект 'Менеджер задач'"
 
-#: task_manager/task_manager/templates/index.html:20
-msgid "Something usefull"
-msgstr "Что-то полезное"
+#: task_manager/task_manager/templates/index.html:21
+msgid "Link for my GitHub account"
+msgstr "Ссылка на мой аккаунт GitHub"
 
-#: task_manager/tasks/filters.py:10
+#: task_manager/tasks/filters.py:12
 msgid "Only your tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/tasks/filters.py:17 task_manager/tasks/models.py:39
+#: task_manager/tasks/filters.py:19 task_manager/tasks/models.py:39
 msgid "Label"
 msgstr "Метка"
 
@@ -204,15 +204,15 @@ msgstr "У вас нет прав для изменения"
 msgid "Task can only be deleted by it's author"
 msgstr "Задачу может удалить только ее автор"
 
-#: task_manager/tasks/views.py:35
+#: task_manager/tasks/views.py:36
 msgid "Task successfully created"
 msgstr "Задача успешно создана"
 
-#: task_manager/tasks/views.py:48
+#: task_manager/tasks/views.py:49
 msgid "Task successfully updated"
 msgstr "Задача успешно изменена"
 
-#: task_manager/tasks/views.py:60
+#: task_manager/tasks/views.py:61
 msgid "Task successfully deleted"
 msgstr "Задача успешно удалена"
 
