@@ -6,9 +6,10 @@ from django.utils.translation import gettext_lazy as _
 from django.views import View
 from django.views.generic import CreateView, DeleteView, UpdateView
 
+from .filters import TaskFilter
 from .models import Task
 from .utils import DeleteOwnerTestMixin, OwnerTestMixin
-from .filters import TaskFilter
+
 
 class TasksListView(LoginRequiredMixin, View):
 
