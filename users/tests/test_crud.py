@@ -34,7 +34,7 @@ class UsersCRUDTest(TestCase):
         self.assertContains(response, "Bob")
     
     def test_login(self):
-        response = self.client.post(reverse('users:user_login'), {
+        response = self.client.post(reverse('user_login'), {
             'username': 'testuser',
             'password': 'testpass123',
         })
@@ -98,7 +98,7 @@ class UsersCRUDTest(TestCase):
     
     def test_logout(self):
         self.client.force_login(self.user)
-        logout_url = reverse('users:user_logout')
+        logout_url = reverse('user_logout')
         self.client.post(logout_url)
 
         self.assertNotIn('_auth_user_id', self.client.session)
