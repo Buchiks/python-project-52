@@ -8,16 +8,17 @@ from django.views.generic import CreateView, DeleteView, UpdateView
 
 from .models import Task
 from .utils import DeleteOwnerTestMixin, OwnerTestMixin
-
+from .filters import TaskFilter
 
 class TasksListView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         tasks = Task.objects.all()
+        tasks_filter = TaskFilter(request.GET, queryset=tasks, request=request)
         return render(
             request,
             "task_list.html",
-            {"tasks": tasks}
+            {"tasks": tasks_filter}
         )
 
 
