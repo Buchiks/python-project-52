@@ -2,27 +2,27 @@ install:
 	uv sync
 
 dev:
-	uv run task_manager/manage.py runserver
+	uv run manage.py runserver
 
 lint:
 	uv run ruff check task_manager
 
 migrate:
-	uv run task_manager/manage.py makemigrations
+	uv run manage.py makemigrations
 
 collectstatic:
-	uv run task_manager/manage.py collectstatic
+	uv run manage.py collectstatic
 
 apply migrations:
-	uv run task_manager/manage.py migrate 
+	uv run manage.py migrate 
 
 compilemessages:
-	uv run task_manager/manage.py compilemessages
+	uv run manage.py compilemessages
 
 messages:
-	uv run task_manager/manage.py  makemessages -l ru
+	uv run manage.py  makemessages -l ru
 
 test:
-	uv run pytest task_manager/
+	uv run pytest .
 
 	

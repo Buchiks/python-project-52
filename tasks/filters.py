@@ -23,10 +23,6 @@ class TaskFilter(django_filters.FilterSet):
         model = Task
         fields = ["status", "executor", "label", "my_tasks"]
     
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super().__init__(*args, **kwargs)
-    
     def filter_my_tasks(self, queryset, name, value):
         if value and self.request.user.is_authenticated:
             return queryset.filter(author=self.request.user)

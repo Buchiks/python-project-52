@@ -6,6 +6,7 @@ from django.views import View
 
 from .forms import StatusForm
 from .models import Status
+from .utils import StatusConnectedTestMixin
 
 
 class StatusesIndexView(LoginRequiredMixin, View):
@@ -65,7 +66,7 @@ class StatusesUpdateView(LoginRequiredMixin, View):
             )
 
 
-class StatusesDeleteView(LoginRequiredMixin, View):
+class StatusesDeleteView(StatusConnectedTestMixin, LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         status_id = kwargs.get("pk")
         status = Status.objects.get(pk=status_id)
