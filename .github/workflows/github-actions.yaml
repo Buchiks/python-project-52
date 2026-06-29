@@ -33,17 +33,31 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.13'
+          
+      - name: Create .env file
+        run: |
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "DJANGO_DB_HOST=localhost" >> .env
+          echo "DJANGO_DB_PORT=5432" >> .env
+          echo "DJANGO_DB_NAME=test_db" >> .env
+          echo "DJANGO_DB_USER=test_user" >> .env
+          echo "DJANGO_DB_PASSWORD=test_password" >> .env
+          echo "DEBUG=False" >> .env
+          
       - name: Install dependencies
         run: |
           pip install uv
           make install
+          
       - name: Run migrations
         run: |
           make migrate
           make apply migrations
+          
       - name: Run tests
         run: |
           make test
+          
       - name: Run linter
         run: |
           make lint
