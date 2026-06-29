@@ -1,6 +1,16 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
 {% load i18n %}
 
-{% translate "Login" as header %}
-{% url 'users:user_login' as action_url %}
-{% translate 'Sign in' as button %}
-{% include "users/create_user.html" with form_action=action_url input_value=button %}
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4">{% translate "Login" %}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">{% translate 'Sign in' %}</button>
+    </form>
+
+</div>
+{% endblock content %}
