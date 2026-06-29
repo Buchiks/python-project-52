@@ -9,7 +9,7 @@ preview = true
 select = ["E", "F", "I", "C90"]
 
 exclude = [
-  "task_manager/task_manager/settings.py",
-  "task_manager/*/migrations/*.py",
-  "task_manager/users/urls.py"
+  "task_manager/settings.py",
+  "*/migrations/*.py",
+  "users/urls.py"
 ]
