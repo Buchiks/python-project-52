@@ -1,8 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import View
+from django.contrib.auth.views import LoginView
 
 from .forms import CustomAuthenticationForm, UserForm, UserUpdateForm
 from .models import Users
@@ -84,21 +86,15 @@ class UserDeleteView(OwnerTestMixin, View):
             return redirect("users:index")
         
 
-class UserLoginView(View):
+class UserLoginView(LoginView):
 
-    def get(self, request, *args, **kwargs):
-        form = CustomAuthenticationForm()
-        return render(request, "users/login.html", {"form": form})
+    form_class = CustomAuthenticationForm
+    template_name = 'users/login.html'
+    redirect_authenticated_user = True  
     
-    def post(self, request, *args, **kwargs):
-        form = CustomAuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            messages.add_message(request, messages.SUCCESS, _("You signed in"))
-            return redirect("index")
-        
-        return render(request, "users/login.html", {"form": form})
+    def get_success_url(self):
+        messages.success(self.request, _("You signed in"))
+        return reverse_lazy('index')
 
 
 class UserLogoutView(View):
