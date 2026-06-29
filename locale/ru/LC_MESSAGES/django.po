@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-29 17:27+0000\n"
+"POT-Creation-Date: 2026-06-29 17:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -242,6 +242,10 @@ msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_"
 
+#: users/forms.py:40
+msgid "Username"
+msgstr "Имя пользователя"
+
 #: users/templates/users/create_user.html:24
 msgid "Registrate"
 msgstr "Зарегистрировать"
@@ -254,23 +258,22 @@ msgstr "Войти"
 msgid "Full name"
 msgstr "Полное имя"
 
-#: users/views.py:36
+#: users/views.py:35
 msgid "User successfully registered"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: users/views.py:63
+#: users/views.py:62
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: users/views.py:83
+#: users/views.py:82
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:99
+#: users/views.py:98
 msgid "You signed in"
 msgstr "Вы залогинены"
 
-#: users/views.py:109
+#: users/views.py:108
 msgid "You signed out"
 msgstr "Вы разлогинены"
-
