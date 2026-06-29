@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 
 from .models import Users
 
@@ -37,8 +38,9 @@ class UserUpdateForm(UserChangeForm):
 class CustomAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].label = _("Username")
-        self.fields['username'].widget.attrs.update({
-            'aria-label': 'Имя пользователя', 
-            'class': 'form-control',
-        })
+        if settings.LANGUAGE_CODE == 'ru':
+            self.fields['username'].label = "Имя пользователя"
+ 
+        else:
+            self.fields['username'].label = "Username"
+
