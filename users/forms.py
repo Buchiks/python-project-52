@@ -38,4 +38,7 @@ class CustomAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].label = _("Username")
-        
+        self.fields['username'].widget.attrs.update({
+            'aria-label': 'Имя пользователя', 
+            'class': 'form-control',
+        })
