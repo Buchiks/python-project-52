@@ -11,7 +11,7 @@ class UserForm(UserCreationForm):
         labels = {
             "first_name": _("Name"),
             "last_name": _("Surname"),
-            "username": _("Nickname")
+            "username": _("Username")
             }
         
     def __init__(self, *args, **kwargs):
@@ -30,14 +30,14 @@ class UserUpdateForm(UserChangeForm):
         labels = {
             "first_name": _("Name"),
             "last_name": _("Surname"),
-            "username": _("Nickname")
+            "username": _("Username")
             }
 
 
 class CustomAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].label = "Имя пользователя"
+        self.fields['username'].label = _("Username")
         self.fields['username'].widget.attrs.update({
             'aria-label': 'Имя пользователя', 
             'class': 'form-control',
