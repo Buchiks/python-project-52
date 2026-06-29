@@ -90,7 +90,6 @@ class UserLoginView(LoginView):
 
     form_class = CustomAuthenticationForm
     template_name = 'users/login.html'
-    redirect_authenticated_user = True  
     
     def get_success_url(self):
         messages.success(self.request, _("You signed in"))
