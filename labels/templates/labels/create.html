@@ -11,9 +11,7 @@
     {% url 'labels:create' as default_url %}
     <form action="{{ action_url | default:default_url }}" method="post">
         {% csrf_token %}
-        <table>
-            {% bootstrap_form form %}
-        </table>
+        {% bootstrap_form form %}
         {% translate 'Create' as default_button %}
         <input type="submit" class="btn btn-primary" value="{{ button | default:default_button }}">
     </form>
