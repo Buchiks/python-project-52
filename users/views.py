@@ -100,5 +100,8 @@ class UserLogoutView(LogoutView):
     next_page = reverse_lazy('index')
     
     def dispatch(self, request, *args, **kwargs):
+        storage = messages.get_messages(request)
+        for _ in storage:
+            pass
         messages.success(request, _("You signed out"))
         return super().dispatch(request, *args, **kwargs)
