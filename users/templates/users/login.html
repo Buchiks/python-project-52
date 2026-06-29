@@ -3,6 +3,13 @@
 {% load i18n %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissable fade show" role="alert">
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">{% translate "Login" %}</h1>
 
