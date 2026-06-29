@@ -36,7 +36,7 @@ class UserCreateView(View):
                 request, 
                 messages.SUCCESS, _("User successfully registered")
                 )
-            return redirect("users:user_login")
+            return redirect("user_login")
         
         return render(request, "users/create_user.html", {"form": form})
 
