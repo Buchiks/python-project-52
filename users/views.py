@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import View
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 from .forms import CustomAuthenticationForm, UserForm, UserUpdateForm
 from .models import Users
@@ -96,9 +96,10 @@ class UserLoginView(LoginView):
         return reverse_lazy('index')
 
 
-class UserLogoutView(View):
-
-    def post(self, request, *args, **kwargs):
-        logout(request)
-        messages.add_message(request, messages.SUCCESS, _("You signed out"))
-        return redirect("index")
+class UserLogoutView(LogoutView):
+    next_page = reverse_lazy('index')
+    
+    def dispatch(self, request, *args, **kwargs):
+        response = super().dispatch(request, *args, **kwargs)
+        messages.success(request, _("You signed out"))
+        return response
