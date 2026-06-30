@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-30 17:04+0000\n"
+"POT-Creation-Date: 2026-06-30 17:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,8 @@ msgstr "уже существует"
 
 #: labels/models.py:10 labels/templates/labels/list.html:24
 #: statuses/forms.py:12 statuses/templates/statuses_list.html:24
-#: tasks/models.py:13 tasks/templates/task_list.html:33 users/forms.py:13
-#: users/forms.py:37
+#: tasks/models.py:13 tasks/templates/task_list.html:33 users/forms.py:14
+#: users/forms.py:44
 msgid "Name"
 msgstr "Имя"
 
@@ -226,16 +226,16 @@ msgstr "Вы уверены?"
 msgid "Logout"
 msgstr "Выход"
 
-#: users/forms.py:14 users/forms.py:38
+#: users/forms.py:15 users/forms.py:45
 msgid "Surname"
 msgstr "Фамилия"
 
-#: users/forms.py:15 users/forms.py:39 users/forms.py:58
+#: users/forms.py:16 users/forms.py:46 users/forms.py:78
 #: users/templates/users/users_list.html:23
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: users/forms.py:20
+#: users/forms.py:21
 msgid ""
 "Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/"
 "_"
@@ -243,13 +243,25 @@ msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_"
 
-#: users/forms.py:27
+#: users/forms.py:28
 msgid "Password"
 msgstr "Пароль"
 
-#: users/forms.py:30
+#: users/forms.py:31
 msgid "Leave blank if you don't want to change it"
 msgstr "Оставте поле пустым, если не хотите менять"
+
+#: users/forms.py:34
+msgid "Password conformation"
+msgstr "Подтверждение пароля"
+
+#: users/forms.py:37
+msgid "Enter the same password again"
+msgstr "Введите пароль еще раз"
+
+#: users/forms.py:60
+msgid "Passwords do not match"
+msgstr "Пароли не совпадают"
 
 #: users/templates/users/create_user.html:15
 msgid "Registrate"
@@ -263,26 +275,26 @@ msgstr "Войти"
 msgid "Full name"
 msgstr "Полное имя"
 
-#: users/views.py:37
+#: users/views.py:36
 msgid "User successfully registered"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: users/views.py:64
+#: users/views.py:63
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: users/views.py:84
+#: users/views.py:83
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:96
+#: users/views.py:95
 msgid "You are already signed in"
 msgstr "Вы уже залогинены"
 
-#: users/views.py:101
+#: users/views.py:100
 msgid "You signed in"
 msgstr "Вы залогинены"
 
-#: users/views.py:110
+#: users/views.py:109
 msgid "You signed out"
 msgstr "Вы разлогинены"
