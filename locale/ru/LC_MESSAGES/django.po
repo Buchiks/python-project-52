@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-30 17:19+0000\n"
+"POT-Creation-Date: 2026-06-30 18:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,8 @@ msgstr "Вы уверены, что хотите удалить эту метк�
 #: statuses/templates/status_delete.html:12
 #: statuses/templates/statuses_list.html:38 tasks/templates/delete.html:16
 #: tasks/templates/show.html:46 tasks/templates/task_list.html:53
-#: users/templates/users/users_list.html:43
+#: users/templates/users/delete_user.html:15
+#: users/templates/users/users_list.html:40
 msgid "Delete"
 msgstr "Удалить"
 
@@ -68,7 +69,7 @@ msgstr "Дата создания"
 #: statuses/templates/statuses_list.html:37 tasks/templates/show.html:44
 #: tasks/templates/task_list.html:52 tasks/templates/update.html:6
 #: users/templates/users/update_user.html:5
-#: users/templates/users/users_list.html:37
+#: users/templates/users/users_list.html:38
 msgid "Update"
 msgstr "Изменить"
 
@@ -218,7 +219,7 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/base.html:60 users/templates/users/users_list.html:39
+#: templates/base.html:60
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
@@ -267,6 +268,10 @@ msgstr "Пароли не совпадают"
 msgid "Registrate"
 msgstr "Зарегистрировать"
 
+#: users/templates/users/delete_user.html:12
+msgid "Are you sure you want to delete?"
+msgstr "Вы уверены, что хотите удалить?"
+
 #: users/templates/users/login.html:19
 msgid "Sign in"
 msgstr "Войти"
@@ -283,18 +288,18 @@ msgstr "Пользователь успешно зарегистрирован"
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: users/views.py:83
+#: users/views.py:91
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:95
+#: users/views.py:103
 msgid "You are already signed in"
 msgstr "Вы уже залогинены"
 
-#: users/views.py:100
+#: users/views.py:108
 msgid "You signed in"
 msgstr "Вы залогинены"
 
-#: users/views.py:109
+#: users/views.py:117
 msgid "You signed out"
 msgstr "Вы разлогинены"

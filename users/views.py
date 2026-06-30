@@ -72,6 +72,14 @@ class UserUpdateView(OwnerTestMixin, View):
 
 
 class UserDeleteView(OwnerTestMixin, View):
+    def get(self, request, *args, **kwargs):
+        user_id = kwargs.get("pk")
+        user = Users.objects.get(pk=user_id)
+        return render(
+            request, 
+            "users/delete_user.html", 
+            {"user": user}
+            )
     
     def post(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")

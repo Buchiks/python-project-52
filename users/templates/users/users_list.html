@@ -34,14 +34,10 @@
                     <td class="col-3">{{ user.username }}</td>
                     <td class="col-3">{{ user.first_name }} {{ user.last_name }}</td>
                     <td class="col-3">{{ user.date_joined }}</td>
-                    <td class="col-2"><a href="{% url 'users:user_update' pk=user.id %}">{% translate "Update" %}</a>
-                        <div>
-                            {% translate "Are you sure?" as confirmation %}
-                            <form action="{% url 'users:user_delete' pk=user.id %}" method="post">
-                                {% csrf_token %}
-                                <input type="submit" class="btn btn-link" value="{% translate 'Delete' %}">
-                            </form>
-                        </div>
+                    <td class="col-2">
+                        <a href="{% url 'users:user_update' pk=user.id %}">{% translate "Update" %}</a>
+                        <br>
+                        <a href="{% url 'users:user_delete' pk=user.id %}">{% translate "Delete" %}</a>
                     </td>
                 </tr>
                 {% endfor %}
