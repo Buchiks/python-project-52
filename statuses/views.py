@@ -1,12 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models.deletion import ProtectedError
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import View
+from django.views.generic import DeleteView
 
 from .forms import StatusForm
 from .models import Status
-from .utils import StatusConnectedTestMixin
 
 
 class StatusesIndexView(LoginRequiredMixin, View):
@@ -66,24 +68,17 @@ class StatusesUpdateView(LoginRequiredMixin, View):
             )
 
 
-class StatusesDeleteView(StatusConnectedTestMixin, LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
-        status_id = kwargs.get("pk")
-        status = Status.objects.get(pk=status_id)
-        return render(
-            request, 
-            "status_delete.html", 
-            {"status": status}
-            )
+class StatusesDeleteView(LoginRequiredMixin, DeleteView):
+
+    model = Status
+    template_name = "status_delete.html"
+    success_url = reverse_lazy("statuses:list")
     
-    def post(self, request, *args, **kwargs):
-        status_id = kwargs.get("pk")
-        status = Status.objects.get(pk=status_id)
-        if status:
-            status.delete()
-            messages.add_message(
-                request, 
-                messages.SUCCESS, 
-                _("Status successfully deleted")
-                )
+    def form_valid(self, form):
+        try:
+            response = super().form_valid(form)
+            messages.success(self.request, _("Status successfully deleted"))
+            return response
+        except ProtectedError:
+            messages.warning(self.request, _("Status cannot be deleted"))
             return redirect("statuses:list")

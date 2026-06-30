@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-30 21:03+0000\n"
+"POT-Creation-Date: 2026-06-30 21:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,21 +119,21 @@ msgstr "Вы уверены, что хотите удалить этот ста�
 msgid "Statuses"
 msgstr "Статусы"
 
-#: statuses/utils.py:20
-msgid "Status cannot be deleted"
-msgstr "Невозможно удалить статус"
-
-#: statuses/views.py:30
+#: statuses/views.py:31
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
 
-#: statuses/views.py:58
+#: statuses/views.py:59
 msgid "Status successfully updated"
 msgstr "Статус успешно изменен"
 
-#: statuses/views.py:87
+#: statuses/views.py:78
 msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
+
+#: statuses/views.py:83
+msgid "Status cannot be deleted"
+msgstr "Невозможно удалить статус"
 
 #: task_manager/templates/index.html:11
 msgid "Welcome from Buchik!"
@@ -151,7 +151,7 @@ msgstr "Ссылка на мой аккаунт GitHub"
 msgid "Only your tasks"
 msgstr "Только свои задачи"
 
-#: tasks/filters.py:19 tasks/models.py:39
+#: tasks/filters.py:19 tasks/models.py:41
 msgid "Label"
 msgstr "Метка"
 
@@ -160,16 +160,16 @@ msgstr "Метка"
 msgid "Implementer"
 msgstr "Исполнитель"
 
-#: tasks/models.py:21
+#: tasks/models.py:23
 msgid "Description"
 msgstr "Описание"
 
-#: tasks/models.py:28 tasks/templates/show.html:18
+#: tasks/models.py:30 tasks/templates/show.html:18
 #: tasks/templates/task_list.html:28
 msgid "Author"
 msgstr "Автор"
 
-#: tasks/models.py:34 tasks/templates/show.html:26
+#: tasks/models.py:36 tasks/templates/show.html:26
 #: tasks/templates/task_list.html:27
 msgid "Status"
 msgstr "Статус"
