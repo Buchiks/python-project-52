@@ -58,8 +58,7 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         {% translate "Are you sure?" as confirmation %}
-                        <form action="{% url 'user_logout' %}" method="post"
-                            onsubmit="return confirm('{{ confirmation }}')">
+                        <form action="{% url 'user_logout' %}" method="post">
                             {% csrf_token %}
                             <input type="submit" class="nav-link active" value="{% translate 'Logout' %}">
                         </form>
