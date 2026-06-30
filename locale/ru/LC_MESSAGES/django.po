@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-30 18:03+0000\n"
+"POT-Creation-Date: 2026-06-30 18:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,6 @@ msgstr "Вы уверены, что хотите удалить эту метк�
 #: statuses/templates/status_delete.html:12
 #: statuses/templates/statuses_list.html:38 tasks/templates/delete.html:16
 #: tasks/templates/show.html:46 tasks/templates/task_list.html:53
-#: users/templates/users/delete_user.html:15
 #: users/templates/users/users_list.html:40
 msgid "Delete"
 msgstr "Удалить"
@@ -271,6 +270,10 @@ msgstr "Зарегистрировать"
 #: users/templates/users/delete_user.html:12
 msgid "Are you sure you want to delete?"
 msgstr "Вы уверены, что хотите удалить?"
+
+#: users/templates/users/delete_user.html:15
+msgid "Yes, delete"
+msgstr "Да, удалить"
 
 #: users/templates/users/login.html:19
 msgid "Sign in"
