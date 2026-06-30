@@ -13,7 +13,7 @@
         <form action="{% url 'labels:delete' pk=label.id %}" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" class="btn btn-danger" value="{% translate 'Delete' %}">
+            <input type="submit" class="btn btn-danger" value="{% translate 'Yes, delete' %}">
         </form>
     </div>
 </main>

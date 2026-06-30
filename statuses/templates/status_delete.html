@@ -9,7 +9,7 @@
         <p class="lead">{% translate "Are you sure you want to delete this status: " %}{{ status.name }}?</p>
         <form action="{% url 'statuses:delete' pk=status.id %}" method="post">
             {% csrf_token %}
-            <input type="submit" class="btn btn-danger" value="{% translate 'Delete' %}">
+            <input type="submit" class="btn btn-danger" value="{% translate 'Yes, delete' %}">
         </form>
     </div>
 </main>
