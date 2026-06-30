@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
+from django import forms
 
 from .models import Users
 
@@ -22,7 +23,12 @@ class UserForm(UserCreationForm):
 
 
 class UserUpdateForm(UserChangeForm):
-    password = None
+    password = forms.CharField(
+        label=_("Password"),
+        widget=forms.PasswordInput,
+        required=False,
+        help_text=_("Leave blank if you don't want to change it")
+    )
 
     class Meta:
         model = Users
@@ -30,8 +36,20 @@ class UserUpdateForm(UserChangeForm):
         labels = {
             "first_name": _("Name"),
             "last_name": _("Surname"),
-            "username": _("Username")
+            "username": _("Username"),
             }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+    
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        password = self.cleaned_data.get('password')
+        if password and not user.check_password(password):
+            user.set_password(password)
+        if commit:
+            user.save()
+  
 
 
 class CustomAuthenticationForm(AuthenticationForm):

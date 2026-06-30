@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-30 11:08+0000\n"
+"POT-Creation-Date: 2026-06-30 17:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,8 @@ msgstr "уже существует"
 
 #: labels/models.py:10 labels/templates/labels/list.html:24
 #: statuses/forms.py:12 statuses/templates/statuses_list.html:24
-#: tasks/models.py:13 tasks/templates/task_list.html:33 users/forms.py:12
-#: users/forms.py:31
+#: tasks/models.py:13 tasks/templates/task_list.html:33 users/forms.py:13
+#: users/forms.py:37
 msgid "Name"
 msgstr "Имя"
 
@@ -222,26 +222,34 @@ msgstr "Регистрация"
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: templates/base.html:64
+#: templates/base.html:63
 msgid "Logout"
 msgstr "Выход"
 
-#: users/forms.py:13 users/forms.py:32
+#: users/forms.py:14 users/forms.py:38
 msgid "Surname"
 msgstr "Фамилия"
 
-#: users/forms.py:14 users/forms.py:33 users/forms.py:40
+#: users/forms.py:15 users/forms.py:39 users/forms.py:58
 #: users/templates/users/users_list.html:23
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: users/forms.py:19
+#: users/forms.py:20
 msgid ""
 "Required. No more than 150 symbols. Only letters, digits and symbols @/./+/-/"
 "_"
 msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_"
+
+#: users/forms.py:27
+msgid "Password"
+msgstr "Пароль"
+
+#: users/forms.py:30
+msgid "Leave blank if you don't want to change it"
+msgstr "Оставте поле пустым, если не хотите менять"
 
 #: users/templates/users/create_user.html:15
 msgid "Registrate"
