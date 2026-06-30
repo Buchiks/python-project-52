@@ -16,7 +16,9 @@ class Task(models.Model):
         settings.AUTH_USER_MODEL, 
         on_delete=models.PROTECT, 
         related_name="executor_tasks",
-        verbose_name=_("Implementer")
+        verbose_name=_("Implementer"),
+        blank=True,
+        null=True
         )
     description = models.TextField(blank=True, verbose_name=_("Description"))
     created_at = models.DateTimeField(auto_now_add=True)
