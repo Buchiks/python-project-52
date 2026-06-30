@@ -11,5 +11,5 @@ select = ["E", "F", "I", "C90"]
 exclude = [
   "task_manager/settings.py",
   "*/migrations/*.py",
-  "users/urls.py"
+  "apps/users/urls.py"
 ]

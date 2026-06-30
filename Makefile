@@ -6,6 +6,7 @@ dev:
 
 lint:
 	uv run ruff check task_manager
+	uv run ruff check apps
 
 migrate:
 	uv run manage.py makemigrations

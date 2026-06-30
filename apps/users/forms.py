@@ -1,7 +1,11 @@
-from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
-from django.utils.translation import gettext_lazy as _
 from django import forms
+from django.contrib.auth.forms import (
+    AuthenticationForm,
+    UserChangeForm,
+    UserCreationForm,
+)
 from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 from .models import Users
 
@@ -70,7 +74,6 @@ class UserUpdateForm(UserChangeForm):
         if commit:
             user.save()
   
-
 
 class CustomAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):

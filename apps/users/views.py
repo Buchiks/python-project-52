@@ -1,13 +1,13 @@
 from django.contrib import messages
+from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import View
-from django.contrib.auth.views import LoginView, LogoutView
 
 from .forms import CustomAuthenticationForm, UserForm, UserUpdateForm
 from .models import Users
-from .utils import OwnerTestMixin, HasTasksMixin
+from .utils import HasTasksMixin, OwnerTestMixin
 
 
 class UsersIndexView(View):
