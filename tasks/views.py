@@ -40,7 +40,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
 class TaskUpdateView(LoginRequiredMixin, OwnerTestMixin, UpdateView):
     
     model = Task
-    fields = ["name", "executor", "status", "labels"]
+    fields = ["name", "executor", "description", "status", "labels"]
     template_name = "update.html"
     success_url = reverse_lazy("tasks:list")
 
