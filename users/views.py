@@ -7,7 +7,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 from .forms import CustomAuthenticationForm, UserForm, UserUpdateForm
 from .models import Users
-from .utils import OwnerTestMixin
+from .utils import OwnerTestMixin, HasTasksMixin
 
 
 class UsersIndexView(View):
@@ -71,7 +71,7 @@ class UserUpdateView(OwnerTestMixin, View):
             )
 
 
-class UserDeleteView(OwnerTestMixin, View):
+class UserDeleteView(OwnerTestMixin, HasTasksMixin, View):
     def get(self, request, *args, **kwargs):
         user_id = kwargs.get("pk")
         user = Users.objects.get(pk=user_id)

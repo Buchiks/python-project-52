@@ -3,6 +3,8 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import redirect
 from django.utils.translation import gettext as _
 
+from .models import Users
+
 '''Проверяет является ли пользователь владельцем или админом'''
 
 
@@ -18,3 +20,12 @@ class OwnerTestMixin(UserPassesTestMixin):
             messages.WARNING, _("You don't have permission")
             )
         return redirect('users:index')
+
+
+class HasTasksMixin:
+    def dispatch(self, request, *args, **kwargs):
+        user = Users.objects.get(pk=self.kwargs.get("pk"))
+        if user.executor_tasks.exists():
+            messages.warning(request, _("Cannot be deleted. User has tasks"))
+            return redirect('users:index')
+        return super().dispatch(request, *args, **kwargs)
