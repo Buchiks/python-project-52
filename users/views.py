@@ -91,6 +91,12 @@ class UserLoginView(LoginView):
     form_class = CustomAuthenticationForm
     template_name = 'users/login.html'
     
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.info(request, _("You are already signed in"))
+            return redirect('index')
+        return super().dispatch(request, *args, **kwargs)
+    
     def get_success_url(self):
         messages.success(self.request, _("You signed in"))
         return reverse_lazy('index')

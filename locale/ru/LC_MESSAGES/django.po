@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-29 21:11+0000\n"
+"POT-Creation-Date: 2026-06-30 11:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,15 +131,15 @@ msgstr "Статус успешно изменен"
 msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
 
-#: task_manager/templates/index.html:18
+#: task_manager/templates/index.html:12
 msgid "Welcome from Buchik!"
 msgstr "Привет от Buchik!"
 
-#: task_manager/templates/index.html:19
+#: task_manager/templates/index.html:13
 msgid "This is a study project 'Task Manager'"
 msgstr "Это учебный проект 'Менеджер задач'"
 
-#: task_manager/templates/index.html:21
+#: task_manager/templates/index.html:15
 msgid "Link for my GitHub account"
 msgstr "Ссылка на мой аккаунт GitHub"
 
@@ -267,10 +267,14 @@ msgstr "Пользователь успешно изменен"
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:95
+#: users/views.py:96
+msgid "You are already signed in"
+msgstr "Вы уже залогинены"
+
+#: users/views.py:101
 msgid "You signed in"
 msgstr "Вы залогинены"
 
-#: users/views.py:103
+#: users/views.py:110
 msgid "You signed out"
 msgstr "Вы разлогинены"
