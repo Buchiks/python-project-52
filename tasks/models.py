@@ -18,7 +18,7 @@ class Task(models.Model):
         related_name="executor_tasks",
         verbose_name=_("Implementer")
         )
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, verbose_name=_("Description"))
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(

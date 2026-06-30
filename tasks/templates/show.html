@@ -9,9 +9,10 @@
 <main class="container">
     <h1 class="mb-4">{% translate "Task view" %}</h1>
     <div class="p-2 rounded bg-secondary text-white border">
-        <h2>{{ task.name }}</h2>
+        <h2 class="px-1">{{ task.name }}</h2>
     </div>
-    <div class="p-5 rounded bg-light border">
+    <div class="p-3 rounded bg-light border">
+        <p class="border-bottom pb-3 mb-3">{{ task.description }}</p>
         <table class="table table-borderless" data-test="urls">
             <tr>
                 <th class="col-7 fw-semibold bg-light">{% translate 'Author' %}</th>
