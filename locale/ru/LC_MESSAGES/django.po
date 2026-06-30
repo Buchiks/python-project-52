@@ -159,7 +159,7 @@ msgstr "Метка"
 #: tasks/models.py:19 tasks/templates/show.html:21
 #: tasks/templates/task_list.html:36
 msgid "Implementer"
-msgstr "Испольнитель"
+msgstr "Исполнитель"
 
 #: tasks/models.py:21
 msgid "Description"
